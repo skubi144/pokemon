@@ -4,8 +4,289 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="init ng zorro">
+    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="add modelsn">
+      <change afterPath="$PROJECT_DIR$/pokemon-app/openapitools.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityChange.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityChangeEffectText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityDetailPokemonInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityDetailPokemonInnerPokemon.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityEffectText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityFlavorText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilityName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/abilitySummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/apiV2PokemonEncountersRetrieve200ResponseInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/apiV2PokemonEncountersRetrieve200ResponseInnerLocationArea.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/apiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/apiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/apiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/apiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerMethod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/apiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerVersion.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryDetailFlavorsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryDetailFlavorsInnerFlavor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFirmnessDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFirmnessName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFirmnessSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFlavorDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFlavorDetailBerriesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFlavorDetailBerriesInnerBerry.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFlavorName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berryFlavorSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/berrySummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/characteristicDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/characteristicDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/characteristicSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/contestEffectDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/contestEffectEffectText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/contestEffectFlavorText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/contestEffectSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/contestTypeDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/contestTypeName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/contestTypeSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/eggGroupDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/eggGroupDetailPokemonSpeciesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/eggGroupName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/eggGroupSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterConditionDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterConditionName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterConditionSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterConditionValueDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterConditionValueName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterConditionValueSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterMethodDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterMethodName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/encounterMethodSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionChainDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionChainDetailChain.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionChainDetailChainEvolvesToInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionChainDetailChainEvolvesToInnerEvolutionDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionChainDetailChainEvolvesToInnerEvolutionDetailsInnerGender.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionChainSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionTriggerDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionTriggerName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/evolutionTriggerSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/experience.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/genderDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/genderDetailPokemonSpeciesDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/genderSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/generationDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/generationName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/generationSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/growthRateDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/growthRateDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/growthRateSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemAttributeDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemAttributeDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemAttributeName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemAttributeSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemCategoryDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemCategoryName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemCategorySummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemDetailBabyTriggerFor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemDetailHeldByPokemonInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemDetailHeldByPokemonInnerVersionDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemDetailMachinesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemDetailSprites.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemEffectText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemFlavorText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemFlingEffectDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemFlingEffectEffectText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemFlingEffectSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemGameIndex.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemPocketDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemPocketName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemPocketSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/itemSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/languageDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/languageName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/languageSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaDetailEncounterMethodRatesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaDetailEncounterMethodRatesInnerVersionDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaDetailPokemonEncountersInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaDetailPokemonEncountersInnerVersionDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaDetailPokemonEncountersInnerVersionDetailsInnerEncounterDetails.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationAreaSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationGameIndex.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/locationSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/machineDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/machineSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/models.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveBattleStyleDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveBattleStyleName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveBattleStyleSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveChange.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveChangeEffectEntriesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDamageClassDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDamageClassDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDamageClassName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDamageClassSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetailContestCombos.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetailContestCombosNormal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetailEffectChangesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetailEffectChangesInnerEffectEntriesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetailMachinesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetailMachinesInnerMachine.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveDetailStatChangesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveFlavorText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveLearnMethodDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveLearnMethodDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveLearnMethodName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveLearnMethodSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveMeta.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveMetaAilmentDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveMetaAilmentName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveMetaAilmentSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveMetaCategoryDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveMetaCategoryDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveMetaCategorySummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveTargetDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveTargetDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveTargetName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/moveTargetSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/natureBattleStylePreference.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/natureDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/natureDetailPokeathlonStatChangesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/natureName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/natureSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedAbilitySummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedBerryFirmnessSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedBerryFlavorSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedBerrySummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedCharacteristicSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedContestEffectSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedContestTypeSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedEggGroupSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedEncounterConditionSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedEncounterConditionValueSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedEncounterMethodSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedEvolutionChainSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedEvolutionTriggerSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedGenderSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedGenerationSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedGrowthRateSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedItemAttributeSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedItemCategorySummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedItemFlingEffectSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedItemPocketSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedItemSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedLanguageSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedLocationAreaSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedLocationSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMachineSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMoveBattleStyleSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMoveDamageClassSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMoveLearnMethodSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMoveMetaAilmentSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMoveMetaCategorySummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMoveSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedMoveTargetSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedNatureSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPalParkAreaSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokeathlonStatSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokedexSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokemonColorSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokemonFormSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokemonHabitatSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokemonShapeSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokemonSpeciesSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedPokemonSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedRegionSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedStatSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedSuperContestEffectSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedTypeSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedVersionGroupSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/paginatedVersionSummaryList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/palParkAreaDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/palParkAreaDetailPokemonEncountersInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/palParkAreaName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/palParkAreaSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokeathlonStatDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokeathlonStatDetailAffectingNatures.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokeathlonStatDetailAffectingNaturesDecreaseInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokeathlonStatDetailAffectingNaturesIncreaseInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokeathlonStatName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokeathlonStatSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokedexDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokedexDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokedexDetailPokemonEntriesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokedexName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokedexSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonColorDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonColorName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonColorSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailAbilitiesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailCries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailHeldItemsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailMovesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailMovesInnerVersionGroupDetailsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailPastAbilitiesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailPastTypesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailSprites.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDetailTypesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonDexEntry.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonFormDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonFormDetailFormNamesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonFormDetailSprites.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonFormSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonGameIndex.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonHabitatDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonHabitatName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonHabitatSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonShapeDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonShapeDetailAwesomeNamesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonShapeDetailNamesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonShapeSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSpeciesDescription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSpeciesDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSpeciesDetailGeneraInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSpeciesDetailPalParkEncountersInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSpeciesDetailVarietiesInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSpeciesFlavorText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSpeciesSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonStat.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemonSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/regionDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/regionName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/regionSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/statDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/statDetailAffectingMoves.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/statDetailAffectingMovesIncreaseInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/statDetailAffectingNatures.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/statName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/statSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/superContestEffectDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/superContestEffectFlavorText.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/superContestEffectSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeDetailDamageRelations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeDetailPastDamageRelationsInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeDetailPastDamageRelationsInnerDamageRelations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeDetailPokemonInner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeDetailPokemonInnerPokemon.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeDetailSpritesValueValue.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeGameIndex.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/typeSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/versionDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/versionGroupDetail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/versionGroupSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/versionName.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/versionSummary.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/app/pages/welcome/welcome.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/app/pages/welcome/welcome.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +305,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/miloszskubala/Desktop/Programowanie/pokemon/pokemon-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/miloszskubala/Desktop/Programowanie/pokemon/pokemon-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pokemon-app" />
@@ -86,7 +367,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751703629764</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1751705113276</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751705113276</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +395,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="init ng zorro" />
-    <option name="LAST_COMMIT_MESSAGE" value="init ng zorro" />
+    <MESSAGE value="update" />
+    <MESSAGE value="add models" />
+    <MESSAGE value="add modelsn" />
+    <option name="LAST_COMMIT_MESSAGE" value="add modelsn" />
   </component>
 </project>
