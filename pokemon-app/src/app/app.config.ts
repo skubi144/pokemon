@@ -14,7 +14,8 @@ import {registerLocaleData} from '@angular/common';
 import pl from '@angular/common/locales/pl';
 import {FormsModule} from '@angular/forms';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
-import {provideHttpClient} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, provideHttpClient} from '@angular/common/http';
+import {baseUrlInterceptor} from '../data-access/interceptors/base-url-interceptor';
 
 registerLocaleData(pl);
 
@@ -22,6 +23,12 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({eventCoalescing: true}),
-    provideRouter(routes), provideNzIcons(icons), provideNzI18n(pl_PL), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient()
+    provideRouter(routes),
+    provideNzIcons(icons),
+    provideNzI18n(pl_PL),
+    importProvidersFrom(FormsModule),
+    provideAnimationsAsync(),
+    provideHttpClient(),
+    {provide: HTTP_INTERCEPTORS, multi: true, useFactory: baseUrlInterceptor}
   ]
 };
