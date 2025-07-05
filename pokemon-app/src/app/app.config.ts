@@ -14,8 +14,8 @@ import {registerLocaleData} from '@angular/common';
 import pl from '@angular/common/locales/pl';
 import {FormsModule} from '@angular/forms';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
-import {HTTP_INTERCEPTORS, provideHttpClient} from '@angular/common/http';
-import {baseUrlInterceptor} from '../data-access/interceptors/base-url-interceptor';
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors} from '@angular/common/http';
+import {baseApiInterceptor} from '../data-access/interceptors/base-api-interceptor';
 
 registerLocaleData(pl);
 
@@ -28,7 +28,6 @@ export const appConfig: ApplicationConfig = {
     provideNzI18n(pl_PL),
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
-    provideHttpClient(),
-    {provide: HTTP_INTERCEPTORS, multi: true, useFactory: baseUrlInterceptor}
+    provideHttpClient(withInterceptors([baseApiInterceptor])),
   ]
 };

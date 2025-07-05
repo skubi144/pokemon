@@ -1,1 +1,25 @@
-<p>pokemon-card works!</p>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h2 nz-typography>Pokemon</h2>
+      <img class="flip-card-img" [src]="pokemon.sprites.front_default" alt="Avatar">
+      <h3 nz-typography>{{ pokemon.name | uppercase }}</h3>
+      <div class="flip-card-stats-front">
+        <h4 nz-typography>Abilities</h4>
+        <div *ngFor="let ability of pokemon.abilities" nz-flex nzAlign='center' nzJustify="flex-start" nzGap="8px">
+          <i nz-icon nzType="thunderbolt" [style.fontSize.px]="15"></i>
+          <span nz-typography nzType="secondary">{{ ability.ability.name }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card-back">
+      <h2 nz-typography>{{ pokemon.name | uppercase }}</h2>
+      <h3 nz-typography>Stats</h3>
+      <div *ngFor="let stat of pokemon.stats" nz-flex nzAlign='center' nzJustify="flex-start" nzGap="8px">
+        <i nz-icon nzType="rise" [style.fontSize.px]="24" [style.color]="'black'"></i>
+        <h4 nz-typography>{{ stat.stat.name }}: {{ stat.base_stat }}</h4>
+      </div>
+      <img class="flip-card-img" [src]="pokemon.sprites['back_default']" alt="Avatar">
+    </div>
+  </div>
+</div>

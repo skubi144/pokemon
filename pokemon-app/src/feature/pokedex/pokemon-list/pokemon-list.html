@@ -1,1 +1,3 @@
-<p>pokemon-list works!</p>
+<div nz-flex nzWrap="wrap" nzGap="24px">
+  <app-pokemon-card *ngFor="let pokemon of pokemons$ | async" [pokemon]="pokemon"/>
+</div>
