@@ -1,0 +1,33 @@
+<div nz-flex>
+  <button nz-button nzType="primary" nzShape="round">
+    <nz-icon nzType="plus"/>
+    Add new
+  </button>
+</div>
+<nz-divider/>
+<nz-table
+  [nzLoading]="loadingService.isLoading()"
+  [nzData]="pokemonTeams"
+  [nzTotal]="1"
+  [nzPageSize]="10"
+  [nzPageIndex]="1"
+>
+  <thead>
+  <tr>
+    <th nzColumnKey="name">Name</th>
+    <th nzColumnKey="gender">Tags</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (data of pokemonTeams; track data.id) {
+      <tr>
+        <td>{{ data.name }}</td>
+        <td>
+          <app-pokemon-tag [name]="PokemonType.Fairy"/>
+        </td>
+      </tr>
+    }
+  </tbody>
+</nz-table>
+
+<app-pokemon-list/>
