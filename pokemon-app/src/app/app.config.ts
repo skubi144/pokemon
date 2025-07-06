@@ -16,18 +16,21 @@ import {FormsModule} from '@angular/forms';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors} from '@angular/common/http';
 import {baseApiInterceptor} from '../data-access/interceptors/base-api-interceptor';
+import {loadingInterceptor} from '../data-access/interceptors/loading-interceptor';
+import {provideTypeIcons} from '../shared/ui/type-icons-module/type-icons-module';
 
 registerLocaleData(pl);
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
+    provideTypeIcons(),
     provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(routes),
     provideNzIcons(icons),
     provideNzI18n(pl_PL),
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
-    provideHttpClient(withInterceptors([baseApiInterceptor])),
+    provideHttpClient(withInterceptors([baseApiInterceptor, loadingInterceptor])),
   ]
 };

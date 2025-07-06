@@ -1,3 +1,17 @@
 {
-  "pokemon-team": []
+  "pokemon-team": [
+    {
+      "id": 1,
+      "name": "My flame team",
+      "tags": [
+        "flame"
+      ],
+      "pokemonIds": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ]
 }

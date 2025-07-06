@@ -1,7 +1,9 @@
 import {PokemonDetail} from './pokemonDetail';
+import {PokemonType} from './pokemonType';
 
 export interface PokemonTeam {
   id: number;
   name: string;
-  pokemons: PokemonDetail['id'][];
+  tags: PokemonType[];
+  pokemonIds: PokemonDetail['id'][];
 }
