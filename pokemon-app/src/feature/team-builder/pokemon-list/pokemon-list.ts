@@ -10,7 +10,6 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
   selector: 'app-pokemon-list',
   imports: [
     PokemonCard,
-    NgIf,
     NzFlexDirective,
     NgForOf,
     AsyncPipe

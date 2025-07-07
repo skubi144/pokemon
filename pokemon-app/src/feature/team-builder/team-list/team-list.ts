@@ -21,8 +21,6 @@ import {PokemonTag} from '../../../shared/ui/pokemon-tag/pokemon-tag';
     NzIconDirective,
     NzButtonComponent,
     NzDividerComponent,
-    PokemonList,
-    PokemonIcon,
     PokemonTag
   ],
   templateUrl: './team-list.html',

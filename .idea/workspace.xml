@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/routing/index.ts" afterDir="false" />
+    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemon-team.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/model/pokemon-team.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-team-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-team-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/routing/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,24 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/miloszskubala/Desktop/Programowanie/pokemon/pokemon-app/src/feature/team-builder",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/miloszskubala/Desktop/Programowanie/pokemon/pokemon-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/miloszskubala/Desktop/Programowanie/pokemon/pokemon-app/src/shared/ui/assets&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/miloszskubala/Desktop/Programowanie/pokemon/pokemon-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pokemon-app/src/shared/ui/assets" />
       <recent name="$PROJECT_DIR$/pokemon-app/src/feature/team-builder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -85,6 +85,7 @@
       <updated>1751702598387</updated>
       <workItem from="1751702599984" duration="61000" />
       <workItem from="1751702695264" duration="1493000" />
+      <workItem from="1751901502802" duration="2874000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -166,7 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751726215455</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add tags">
+      <option name="closed" value="true" />
+      <created>1751801244242</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751801244242</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add tags">
+      <option name="closed" value="true" />
+      <created>1751801248421</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1751801248421</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +206,8 @@
     <MESSAGE value="add models" />
     <MESSAGE value="add modelsn" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="add tags" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
