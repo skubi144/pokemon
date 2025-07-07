@@ -15,8 +15,10 @@
   </thead>
   <tbody>
     @for (data of nzTable.data; track data.name) {
-      <tr>
-        <td>{{ data.name }}</td>
+      <tr [style.cursor]="'pointer'" (click)="handleSelectPokemon(data.name)">
+        <td>
+            {{ data.name }}
+        </td>
       </tr>
     }
   </tbody>
@@ -30,4 +32,4 @@
     </div>
   </div>
 </nz-dropdown-menu>
-<router-outlet/>
+<app-pokemon-details *ngIf="selectedPokemonName" [pokemonName]="selectedPokemonName" (close)="handleUnselectPokemon()"/>

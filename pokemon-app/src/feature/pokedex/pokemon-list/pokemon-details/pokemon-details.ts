@@ -1,13 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NzModalComponent, NzModalContentDirective, NzModalFooterDirective, NzModalModule} from 'ng-zorro-antd/modal';
-import {NzButtonComponent} from 'ng-zorro-antd/button';
+import {Component, DestroyRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {NzModalComponent, NzModalContentDirective, NzModalModule} from 'ng-zorro-antd/modal';
 import {PokemonService} from '../../../../data-access/services/pokemon-service';
-import {ActivatedRoute} from '@angular/router';
-import {Pokemon} from 'pokeapi-typescript';
 import {Subscription} from 'rxjs';
 import {PokemonDetail as PokemonDetailModel} from '../../../../data-access/model/pokemonDetail'
 import {LoadingService} from '../../../../data-access/services/loading-service';
 import {Spinner} from '../../../../shared/ui/spinner/spinner';
+import {NgIf} from '@angular/common';
+import {PokemonCard} from '../../../../shared/ui/pokemon-card/pokemon-card';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -15,34 +15,37 @@ import {Spinner} from '../../../../shared/ui/spinner/spinner';
     NzModalComponent,
     NzModalModule,
     NzModalContentDirective,
-    Spinner
+    Spinner,
+    NgIf,
+    PokemonCard
   ],
   templateUrl: './pokemon-details.html',
   styleUrl: './pokemon-details.css'
 })
-export class PokemonDetails implements OnInit, OnDestroy {
+export class PokemonDetails implements OnInit {
+  @Input() pokemonName?: string;
+  @Output() close = new EventEmitter<void>();
   pokemon?: PokemonDetailModel;
-  pokemonName = '';
   pokemonDetailsSubscription!: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute, private pokemonService: PokemonService, private loadingService: LoadingService) {
-  }
-
-  ngOnDestroy(): void {
+  constructor(private destroyRef: DestroyRef, private pokemonService: PokemonService, protected loadingService: LoadingService) {
   }
 
   ngOnInit(): void {
-    this.pokemonName = this.activatedRoute.snapshot.paramMap.get('name')!;
-    this.pokemonDetailsSubscription = this.pokemonService.getPokemon(this.pokemonName).subscribe((pokemon) => {
-      this.pokemon = pokemon
-    })
+    if (!this.pokemonName) {
+      this.close.emit();
+    }
+
+    this.pokemonDetailsSubscription = this.pokemonService
+      .getPokemon(this.pokemonName!)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(
+        (pokemon) => {
+          this.pokemon = pokemon
+        })
   }
 
-  handleCancel() {
-
-  }
-
-  handleOk() {
-
+  async handleCancel() {
+    this.close.emit();
   }
 }
