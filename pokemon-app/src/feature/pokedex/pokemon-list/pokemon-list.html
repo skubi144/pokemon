@@ -1,8 +1,8 @@
 <nz-table #nzTable
-          [nzData]="rows"
+          [nzData]="filteredRows"
           [nzFrontPagination]="true"
           [nzLoading]="loadingService.isLoading()"
-          (nzQueryParams)="onQueryParamsChange($event)">
+>
   <thead>
   <tr>
     <th nzCustomFilter>
@@ -11,8 +11,6 @@
         <nz-icon nzType="search"/>
       </nz-filter-trigger>
     </th>
-    <th>Age</th>
-    <th>Address</th>
   </tr>
   </thead>
   <tbody>
@@ -26,9 +24,10 @@
 <nz-dropdown-menu #menu="nzDropdownMenu">
   <div class="ant-table-filter-dropdown">
     <div class="search-box">
-      <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue"/>
+      <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue" (keydown.enter)="search() "/>
       <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">Search</button>
       <button nz-button nzSize="small" (click)="reset()">Reset</button>
     </div>
   </div>
 </nz-dropdown-menu>
+<router-outlet/>

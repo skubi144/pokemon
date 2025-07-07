@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/routing/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +78,7 @@
       <updated>1751702598387</updated>
       <workItem from="1751702599984" duration="61000" />
       <workItem from="1751702695264" duration="1493000" />
-      <workItem from="1751901502802" duration="2874000" />
+      <workItem from="1751901502802" duration="5067000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -183,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751801248421</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Update">
+      <option name="closed" value="true" />
+      <created>1751904772771</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1751904772771</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update">
+      <option name="closed" value="true" />
+      <created>1751904777360</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1751904777360</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
