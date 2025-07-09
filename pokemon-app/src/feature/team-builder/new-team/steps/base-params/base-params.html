@@ -1,0 +1,17 @@
+<form nz-form [formGroup]="formGroup" [nzLayout]="'vertical'" (ngSubmit)="handleSubmit($event)">
+  <nz-form-item>
+    <nz-form-label nzFor="email">Team name</nz-form-label>
+    <nz-form-control [nzErrorTip]="nameErrorTemplate">
+      <input formControlName="name" nz-input name="email" type="email" id="email"/>
+      <ng-template #nameErrorTemplate let-control>
+        @if (control.errors?.['isNotBlank']) {
+          Please fill team name!
+        }
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <button nz-button nzType="primary">Next</button>
+  </nz-form-item>
+</form>

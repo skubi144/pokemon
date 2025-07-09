@@ -12,6 +12,7 @@ import {PokemonList} from '../pokemon-list/pokemon-list';
 import {PokemonIcon} from '../../../shared/ui/pokemon-icon/pokemon-icon';
 import {PokemonType} from '../../../data-access/model/pokemonType';
 import {PokemonTag} from '../../../shared/ui/pokemon-tag/pokemon-tag';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-team-list',
@@ -21,7 +22,8 @@ import {PokemonTag} from '../../../shared/ui/pokemon-tag/pokemon-tag';
     NzIconDirective,
     NzButtonComponent,
     NzDividerComponent,
-    PokemonTag
+    PokemonTag,
+    RouterLink
   ],
   templateUrl: './team-list.html',
   styleUrl: './team-list.css'
