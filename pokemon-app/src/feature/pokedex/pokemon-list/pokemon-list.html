@@ -5,6 +5,11 @@
 >
   <thead>
   <tr>
+    @if (selectable) {
+      <th [style.width]="'120px'">
+        Checked
+      </th>
+    }
     <th nzCustomFilter>
       Name
       <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
@@ -15,7 +20,14 @@
   </thead>
   <tbody>
     @for (data of nzTable.data; track data.name) {
-      <tr [style.cursor]="'pointer'" (click)="handleSelectPokemon(data.name)">
+      <tr [style.cursor]="'pointer'" (dblclick)="handleSelectPokemon(data.name)">
+        @if (selectable) {
+          <td
+            [nzChecked]="selectedItemId.has(data.name)"
+            [nzLabel]="data.name"
+            (nzCheckedChange)="onItemChecked(data.name, $event)"
+          ></td>
+        }
         <td>
           {{ data.name }}
         </td>

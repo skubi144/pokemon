@@ -1,18 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NzFormControlComponent, NzFormDirective, NzFormItemComponent, NzFormLabelComponent} from 'ng-zorro-antd/form';
 import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
 import {NzInputDirective} from 'ng-zorro-antd/input';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {
-  FormControl,
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import {Validators} from '../../../../../shared/utils/validators';
-
-interface BaseParamsForm {
-  name: FormControl<string>
-}
+import {TeamBuilderService} from '../../service/team-builder-service';
+import {Router} from '@angular/router';
+import {BaseParamsFormGroup} from '../common/form';
 
 @Component({
   selector: 'app-base-params',
@@ -31,18 +28,18 @@ interface BaseParamsForm {
   styleUrl: './base-params.css'
 })
 export class BaseParams implements OnInit {
-  formGroup!: FormGroup<BaseParamsForm>;
+  formGroup!: BaseParamsFormGroup;
 
-  ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      name: new FormControl<string>('', {
-        nonNullable: true,
-        validators: [Validators.required]
-      },)
-    }, {updateOn: "submit"})
+  constructor(private teamBuilderService: TeamBuilderService, private router: Router) {
   }
 
-  handleSubmit($event: any) {
-    console.log(this.formGroup)
+  ngOnInit(): void {
+    this.formGroup = this.teamBuilderService.formGroup.get('baseParams') as BaseParamsFormGroup
+  }
+
+  async handleSubmit() {
+    if (!this.formGroup.valid) return;
+
+    await this.router.navigate(['team-builder', 'build', 'pokemons'])
   }
 }

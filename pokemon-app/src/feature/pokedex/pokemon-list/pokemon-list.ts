@@ -1,4 +1,4 @@
-import {Component, DestroyRef, OnInit,} from '@angular/core';
+import {Component, DestroyRef, EventEmitter, Input, OnInit, Output,} from '@angular/core';
 import {NzButtonModule} from 'ng-zorro-antd/button';
 import {NzIconModule} from 'ng-zorro-antd/icon';
 import {
@@ -27,6 +27,9 @@ import {NgIf} from '@angular/common';
   styleUrl: './pokemon-list.css'
 })
 export class PokemonList implements OnInit {
+  @Input() selectable = false;
+  @Input() selectedItemId = new Set<string>();
+  @Output() toggleItem = new EventEmitter<{ id: string; value: boolean }>();
   rows: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = [];
   pokemonListSubscription!: Subscription;
   selectedPokemonName?: string;
@@ -65,5 +68,11 @@ export class PokemonList implements OnInit {
 
   handleUnselectPokemon() {
     this.selectedPokemonName = undefined;
+  }
+
+  onItemChecked(id: string, value: boolean) {
+    const payload = {id, value}
+
+    this.toggleItem.emit(payload)
   }
 }

@@ -3,6 +3,7 @@ import {ActivatedRoute, NavigationEnd, Router, RouterOutlet} from '@angular/rout
 import {NzStepComponent, NzStepsComponent} from 'ng-zorro-antd/steps';
 import {filter, map, of, startWith, switchMap} from 'rxjs';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import {TeamBuilderService} from './service/team-builder-service';
 
 @Component({
   template: `
@@ -12,11 +13,15 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
       <nz-step nzTitle="Pick potions" [nzStatus]="getStatus('potions')" nzIcon="experiment"></nz-step>
       <nz-step nzTitle="Pick berries" [nzStatus]="getStatus('berries')" nzIcon="gift"></nz-step>
     </nz-steps>
-    <router-outlet></router-outlet>`,
+    <router-outlet></router-outlet>
+  `,
   imports: [
     RouterOutlet,
     NzStepsComponent,
     NzStepComponent,
+  ],
+  providers: [
+    TeamBuilderService
   ]
 })
 export class NewTeam implements OnInit {
@@ -32,7 +37,7 @@ export class NewTeam implements OnInit {
     return this.currentStepId < index ? 'wait' : 'finish';
   }
 
-  ngOnInit(): void {
+  initSegmentDetector() {
     const initialUrlSegments = this.activatedRoute.firstChild?.snapshot.url ?? [];
 
     this.router.events.pipe(
@@ -50,7 +55,10 @@ export class NewTeam implements OnInit {
     ).subscribe(path => {
       this.currentChildPath = path;
       this.currentStepId = this.steps.indexOf(path ?? '')
-      console.log(this.currentChildPath, this.currentStepId);
     });
+  }
+
+  ngOnInit(): void {
+    this.initSegmentDetector();
   }
 }

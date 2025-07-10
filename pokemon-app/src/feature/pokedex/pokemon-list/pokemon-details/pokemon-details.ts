@@ -26,7 +26,6 @@ export class PokemonDetails implements OnInit {
   @Input() pokemonName?: string;
   @Output() close = new EventEmitter<void>();
   pokemon?: PokemonDetailModel;
-  pokemonDetailsSubscription!: Subscription;
 
   constructor(private destroyRef: DestroyRef, private pokemonService: PokemonService, protected loadingService: LoadingService) {
   }
@@ -36,7 +35,7 @@ export class PokemonDetails implements OnInit {
       this.close.emit();
     }
 
-    this.pokemonDetailsSubscription = this.pokemonService
+    this.pokemonService
       .getPokemon(this.pokemonName!)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(
