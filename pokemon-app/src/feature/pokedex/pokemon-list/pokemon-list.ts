@@ -28,7 +28,7 @@ import {NgIf} from '@angular/common';
 })
 export class PokemonList implements OnInit {
   @Input() selectable = false;
-  @Input() selectedItemId = new Set<string>();
+  @Input() selectedItemId:string[] = [];
   @Output() toggleItem = new EventEmitter<{ id: string; value: boolean }>();
   rows: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = [];
   pokemonListSubscription!: Subscription;

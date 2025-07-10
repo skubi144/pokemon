@@ -23,7 +23,7 @@
       <tr [style.cursor]="'pointer'" (dblclick)="handleSelectPokemon(data.name)">
         @if (selectable) {
           <td
-            [nzChecked]="selectedItemId.has(data.name)"
+            [nzChecked]="selectedItemId.includes(data.name)"
             [nzLabel]="data.name"
             (nzCheckedChange)="onItemChecked(data.name, $event)"
           ></td>
