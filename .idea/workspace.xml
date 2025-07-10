@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/new-team.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/shared/utils/validators.ts" afterDir="false" />
+    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="Add next">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/new-team.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/new-team.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/base-params/base-params.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/base-params/base-params.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/base-params/base-params.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/base-params/base-params.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/routing/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/team-list/team-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/shared/utils/validators.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/shared/utils/validators.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <updated>1751702598387</updated>
       <workItem from="1751702599984" duration="61000" />
       <workItem from="1751702695264" duration="1493000" />
-      <workItem from="1751901502802" duration="12670000" />
+      <workItem from="1751901502802" duration="16072000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -211,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751908739186</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add next">
+      <option name="closed" value="true" />
+      <created>1752089872179</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752089872179</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +243,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="add tags" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Add next" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add next" />
   </component>
 </project>

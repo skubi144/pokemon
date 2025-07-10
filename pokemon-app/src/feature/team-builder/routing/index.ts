@@ -10,7 +10,9 @@ export const routes: Routes = [
   {
     path: 'build', component: NewTeam, children: [
       {path: 'base', component: BaseParams},
-      {path: 'pick-pokemons', component: PickPokemons},
+      {path: 'pokemons', component: PickPokemons},
+      {path: 'potions', component: PickPokemons},
+      {path: 'berries', component: PickPokemons},
     ]
   },
 ]

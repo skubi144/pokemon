@@ -37,7 +37,7 @@ export class BaseParams implements OnInit {
     this.formGroup = new FormGroup({
       name: new FormControl<string>('', {
         nonNullable: true,
-        validators: [Validators.isNotBlank]
+        validators: [Validators.required]
       },)
     }, {updateOn: "submit"})
   }

@@ -1,11 +1,56 @@
-import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import {Component, DestroyRef, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router, RouterOutlet} from '@angular/router';
+import {NzStepComponent, NzStepsComponent} from 'ng-zorro-antd/steps';
+import {filter, map, of, startWith, switchMap} from 'rxjs';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
 @Component({
   template: `
+    <nz-steps>
+      <nz-step nzTitle="Base information" [nzStatus]="getStatus('base')" nzIcon="info-circle"></nz-step>
+      <nz-step nzTitle="Pick pokemons" [nzStatus]="getStatus('pokemons')" nzIcon="aliwangwang"></nz-step>
+      <nz-step nzTitle="Pick potions" [nzStatus]="getStatus('potions')" nzIcon="experiment"></nz-step>
+      <nz-step nzTitle="Pick berries" [nzStatus]="getStatus('berries')" nzIcon="gift"></nz-step>
+    </nz-steps>
     <router-outlet></router-outlet>`,
   imports: [
-    RouterOutlet
+    RouterOutlet,
+    NzStepsComponent,
+    NzStepComponent,
   ]
 })
-export class NewTeam {}
+export class NewTeam implements OnInit {
+  steps = ['base', 'pokemons', 'potions', 'berries'];
+  currentChildPath: string | null = null
+  currentStepId = 0;
+
+  constructor(private destroy: DestroyRef, private router: Router, private activatedRoute: ActivatedRoute) {
+  }
+
+  getStatus(step: string) {
+    const index = this.steps.indexOf(step);
+    return this.currentStepId < index ? 'wait' : 'finish';
+  }
+
+  ngOnInit(): void {
+    const initialUrlSegments = this.activatedRoute.firstChild?.snapshot.url ?? [];
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      startWith(initialUrlSegments),
+      switchMap(urlSegments => {
+        if (Array.isArray(urlSegments)) {
+          return of(urlSegments);
+        } else {
+          return this.activatedRoute.firstChild ? this.activatedRoute.firstChild.url : of([]);
+        }
+      }),
+      map(urlSegments => urlSegments.map(s => s.path).join('/') || null),
+      takeUntilDestroyed(this.destroy),
+    ).subscribe(path => {
+      this.currentChildPath = path;
+      this.currentStepId = this.steps.indexOf(path ?? '')
+      console.log(this.currentChildPath, this.currentStepId);
+    });
+  }
+}
