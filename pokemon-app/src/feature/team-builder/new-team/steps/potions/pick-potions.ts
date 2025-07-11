@@ -71,6 +71,6 @@ export class PickPotions implements OnInit {
   async handleSubmit() {
     if (!this.formGroup.valid) return;
 
-    await this.router.navigate(['team-builder', 'build', 'potions'])
+    await this.router.navigate(['team-builder', 'build', 'berries'])
   }
 }
