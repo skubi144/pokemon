@@ -43,12 +43,15 @@ export class PickPotions implements OnInit {
       .subscribe(value => {
         this.selectedId = [...value.selectedId ?? []]
       })
+    this.selectedId = [...this.formGroup.get('selectedId')?.value ?? []]
   }
 
   initData() {
-    this.pokemonService.getPotionsAll().pipe(takeUntilDestroyed(this.onDestroy)).subscribe(data => {
-      this.potions = data
-    })
+    this.pokemonService.getPotionsAll()
+      .pipe(takeUntilDestroyed(this.onDestroy))
+      .subscribe(data => {
+        this.potions = data
+      })
   }
 
   ngOnInit(): void {

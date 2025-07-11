@@ -22,6 +22,7 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {JsonPipe} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {NzFlexDirective} from 'ng-zorro-antd/flex';
+import {NzCheckboxComponent} from 'ng-zorro-antd/checkbox';
 
 @Component({
   selector: 'app-table',
@@ -29,7 +30,7 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
     NzTableComponent,
     FormsModule, NzButtonModule,
     NzDropDownModule, NzIconModule, NzInputModule,
-    NzTableModule, NzFlexDirective,
+    NzTableModule, NzFlexDirective, NzCheckboxComponent,
   ],
   templateUrl: './table.html',
   styleUrl: './table.css'
@@ -59,10 +60,11 @@ export class Table implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes['rows']) return;
-
-    this.filteredRows = [...changes['rows'].currentValue];
-    this.search()
+    if (changes['rows']) {
+      this.filteredRows = [...changes['rows'].currentValue];
+      this.search()
+    }
+    console.log({changes});
   }
 
   ngOnInit(): void {

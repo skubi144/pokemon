@@ -29,12 +29,19 @@ export class NewTeam implements OnInit {
   currentChildPath: string | null = null
   currentStepId = 0;
 
-  constructor(private destroy: DestroyRef, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private teamBuilderService: TeamBuilderService, private destroy: DestroyRef, private router: Router, private activatedRoute: ActivatedRoute) {
+
   }
 
   getStatus(step: string) {
-    const index = this.steps.indexOf(step);
-    return this.currentStepId < index ? 'wait' : 'finish';
+    const id = this.steps.indexOf(step);
+    const isValid = this.teamBuilderService.formGroup.get(step)?.valid;
+    const dirty = this.teamBuilderService.formGroup.get(step)?.dirty;
+
+    if (this.currentStepId < id) return 'wait';
+    if (!dirty) return 'finish'
+
+    return isValid ? 'finish' : 'error';
   }
 
   initSegmentDetector() {
@@ -60,5 +67,6 @@ export class NewTeam implements OnInit {
 
   ngOnInit(): void {
     this.initSegmentDetector();
+    this.teamBuilderService.formGroup.valueChanges.subscribe(console.log)
   }
 }

@@ -28,7 +28,7 @@ import {NzFormControlComponent, NzFormItemComponent, NzFormLabelComponent} from 
 })
 export class PickPokemons implements OnInit {
   formGroup!: PickItemsFormGroup;
-  selectedId: string[] = []
+  selectedId: string[] = this.formGroup?.get('selectedId')?.value ?? []
 
   constructor(private onDestroy: DestroyRef, private teamBuilderService: TeamBuilderService, private router: Router) {
   }
@@ -40,6 +40,7 @@ export class PickPokemons implements OnInit {
       .subscribe(value => {
         this.selectedId = [...value.selectedId ?? []]
       })
+    this.selectedId = [...this.formGroup?.get('selectedId')?.value ?? []]
   }
 
 
@@ -51,8 +52,7 @@ export class PickPokemons implements OnInit {
     } else {
       itemsId = itemsId.filter(item => item !== id)
     }
-
-    this.formGroup.get('selectedId')?.patchValue?.(itemsId);
+    this.formGroup.get('selectedId')?.setValue?.(itemsId);
   }
 
   async handleSubmit() {

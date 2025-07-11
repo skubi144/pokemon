@@ -43,6 +43,7 @@ export class Berries {
       .subscribe(value => {
         this.selectedId = [...value.selectedId ?? []]
       })
+    this.selectedId = [...this.formGroup.get('selectedId')?.value ?? []]
   }
 
   initData() {

@@ -44,7 +44,6 @@ export class PokemonList implements OnInit {
       .subscribe({
         next: (payload) => {
           this.rows = payload;
-          console.log(payload);
         }
       })
   }

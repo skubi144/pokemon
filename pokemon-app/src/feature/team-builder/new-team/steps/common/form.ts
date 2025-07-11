@@ -33,7 +33,7 @@ export function createNewTeamForm(): NewTeamFormGroup {
     base: new FormGroup({
         name: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
       },
-      {updateOn: "submit"}),
+      ),
     pokemons: new FormGroup({
       selectedId: new FormControl<string[]>([], {
         nonNullable: true,

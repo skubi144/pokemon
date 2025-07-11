@@ -13,11 +13,11 @@
     <th nzCustomFilter>
       Name
       <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
-       <div nz-flex [nzGap]="'8px'">
-        <nz-icon nzType="search"/>
-         {{searchValue}}
+        <div nz-flex [nzGap]="'8px'">
+          <nz-icon nzType="search"/>
+          {{ searchValue }}
 
-       </div>
+        </div>
       </nz-filter-trigger>
     </th>
   </tr>
@@ -26,11 +26,12 @@
     @for (data of nzTable.data; track data.name) {
       <tr [style.cursor]="'pointer'" (dblclick)="handleDblClick(data.name)">
         @if (selectable) {
-          <td
-            [nzChecked]="selectedItemId.includes(data.name)"
-            [nzLabel]="data.name"
-            (nzCheckedChange)="onItemChecked(data.name, $event)"
-          ></td>
+          <td>
+            <label nz-checkbox
+                   [ngModel]="selectedItemId.includes(data.name)"
+                   (ngModelChange)="onItemChecked(data.name, $event)">
+            </label>
+          </td>
         }
         <td>
           {{ data.name }}
