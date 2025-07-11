@@ -3,7 +3,7 @@ import {PokemonList} from '../../../../pokedex/pokemon-list/pokemon-list';
 import {NzFlexDirective} from 'ng-zorro-antd/flex';
 import {Router, RouterLink} from '@angular/router';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
-import {PokemonsFormGroup} from '../common/form';
+import {PickItemsFormGroup} from '../common/form';
 import {TeamBuilderService} from '../../service/team-builder-service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -27,36 +27,35 @@ import {NzFormControlComponent, NzFormItemComponent, NzFormLabelComponent} from 
   styleUrl: './pick-pokemons.css'
 })
 export class PickPokemons implements OnInit {
-  formGroup!: PokemonsFormGroup;
-  currentSelectedPokemonsId: string[] = []
+  formGroup!: PickItemsFormGroup;
+  selectedId: string[] = []
 
   constructor(private onDestroy: DestroyRef, private teamBuilderService: TeamBuilderService, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.formGroup = this.teamBuilderService.formGroup.get('pokemons') as PokemonsFormGroup
+    this.formGroup = this.teamBuilderService.formGroup.get('pokemons') as PickItemsFormGroup
     this.formGroup.valueChanges
       .pipe(takeUntilDestroyed(this.onDestroy))
       .subscribe(value => {
-        this.currentSelectedPokemonsId = [...value.selectedPokemonId ?? []]
+        this.selectedId = [...value.selectedId ?? []]
       })
   }
 
 
   handleToggleItem($event: { id: string; value: boolean }) {
     const {id, value} = $event;
-    let selectedPokemonId = [...(this.formGroup.get('selectedPokemonId')?.value ?? []) as string[]];
+    let itemsId = [...(this.formGroup.get('selectedId')?.value ?? []) as string[]];
     if (value) {
-      selectedPokemonId.push(id)
+      itemsId.push(id)
     } else {
-      selectedPokemonId = selectedPokemonId.filter(item => item !== id)
+      itemsId = itemsId.filter(item => item !== id)
     }
 
-    this.formGroup.get('selectedPokemonId')?.patchValue?.(selectedPokemonId);
+    this.formGroup.get('selectedId')?.patchValue?.(itemsId);
   }
 
   async handleSubmit() {
-    console.log(this.formGroup);
     if (!this.formGroup.valid) return;
 
     await this.router.navigate(['team-builder', 'build', 'potions'])

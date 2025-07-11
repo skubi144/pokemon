@@ -37,9 +37,9 @@ export class PokemonService {
 
   getPotionsAll() {
     return this.http.get<{
-      results: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]
-    }>(`/pokemon?limit=100000&offset=0`).pipe(map(({results}) =>
-      results
+      items: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]
+    }>(`/item-category/healing?limit=100000&offset=0`).pipe(map(({items}) =>
+      items
     ));
   }
 }

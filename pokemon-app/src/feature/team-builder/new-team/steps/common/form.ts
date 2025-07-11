@@ -17,22 +17,30 @@ export type BaseParamsFormGroup = FormGroup<{
   name: FormControl<string>;
 }>;
 
-export type PokemonsFormGroup = FormGroup<{
-  selectedPokemonId: FormControl<string[]>;
+export type PickItemsFormGroup = FormGroup<{
+  selectedId: FormControl<string[]>;
 }>;
 
 export type NewTeamFormGroup = FormGroup<{
   baseParams: BaseParamsFormGroup;
-  pokemons: PokemonsFormGroup;
+  pokemons: PickItemsFormGroup;
+  potions: PickItemsFormGroup;
 }>;
 
 export function createNewTeamForm(): NewTeamFormGroup {
   return new FormGroup({
     baseParams: new FormGroup({
-      name: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
-    }, {updateOn: "submit"}),
+        name: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
+      },
+      {updateOn: "submit"}),
     pokemons: new FormGroup({
-      selectedPokemonId: new FormControl<string[]>([], {
+      selectedId: new FormControl<string[]>([], {
+        nonNullable: true,
+        validators: [Validators.maxLength(6)]
+      }),
+    },),
+    potions: new FormGroup({
+      selectedId: new FormControl<string[]>([], {
         nonNullable: true,
         validators: [Validators.maxLength(6)]
       }),

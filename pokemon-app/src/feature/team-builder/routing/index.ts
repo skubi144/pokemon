@@ -3,7 +3,7 @@ import {TeamList} from '../team-list/team-list';
 import {NewTeam} from '../new-team/new-team';
 import {BaseParams} from '../new-team/steps/base-params/base-params';
 import {PickPokemons} from '../new-team/steps/pick-pokemons/pick-pokemons';
-import {Potions,} from '../new-team/steps/potions/potions';
+import {PickPotions,} from '../new-team/steps/potions/pick-potions';
 import {Berries} from '../new-team/steps/berries/berries';
 
 export const routes: Routes = [
@@ -12,7 +12,7 @@ export const routes: Routes = [
     path: 'build', component: NewTeam, children: [
       {path: 'base', component: BaseParams},
       {path: 'pokemons', component: PickPokemons},
-      {path: 'potions', component: Potions},
+      {path: 'potions', component: PickPotions},
       {path: 'berries', component: Berries},
     ]
   },
