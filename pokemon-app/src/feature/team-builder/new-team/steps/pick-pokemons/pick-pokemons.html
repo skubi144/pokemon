@@ -1,18 +1,20 @@
-<form [formGroup]="formGroup" (ngSubmit)="handleSubmit($event)">
+<form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
   <nz-form-item>
-    <nz-form-control>
+    <nz-form-control [nzErrorTip]="'aazaaaa'">
       <app-pokemon-list (toggleItem)="handleToggleItem($event)" [selectable]="true"
                         [selectedItemId]="currentSelectedPokemonsId"/>
-      @if (formGroup.controls?.['selectedPokemonId']?.errors?.['maxlength']) {
-        You can add up to 6 pokemons
-      }
-      @if (formGroup.controls?.['selectedPokemonId']?.errors?.['minlength']) {
-        You need to add at least 1 pokemon
-      }
+      <div class="ant-form-item-explain-error">
+        @if (formGroup.controls?.['selectedPokemonId']?.errors?.['maxlength']) {
+          You can add up to 6 pokemons
+        }
+        @if (formGroup.controls?.['selectedPokemonId']?.errors?.['minlength']) {
+          You need to add at least 1 pokemon
+        }
+      </div>
     </nz-form-control>
   </nz-form-item>
   <div nz-flex nzGap="large">
     <a nz-button [routerLink]="'/team-builder/build/base'">Go back</a>
-    <button nz-button nzType="primary">Next</button>
+    <button [disabled]="currentSelectedPokemonsId.length===0" nz-button nzType="primary">Next</button>
   </div>
 </form>

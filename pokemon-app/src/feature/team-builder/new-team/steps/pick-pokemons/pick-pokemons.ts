@@ -3,14 +3,12 @@ import {PokemonList} from '../../../../pokedex/pokemon-list/pokemon-list';
 import {NzFlexDirective} from 'ng-zorro-antd/flex';
 import {Router, RouterLink} from '@angular/router';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
-import {BaseParamsFormGroup, PokemonsFormGroup} from '../common/form';
+import {PokemonsFormGroup} from '../common/form';
 import {TeamBuilderService} from '../../service/team-builder-service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
 import {NzFormControlComponent, NzFormItemComponent, NzFormLabelComponent} from 'ng-zorro-antd/form';
-import {NzInputDirective} from 'ng-zorro-antd/input';
-import {JsonPipe} from '@angular/common';
 
 @Component({
   selector: 'app-pick-pokemons',
@@ -23,10 +21,7 @@ import {JsonPipe} from '@angular/common';
     NzColDirective,
     NzFormControlComponent,
     NzFormItemComponent,
-    NzFormLabelComponent,
-    NzInputDirective,
     NzRowDirective,
-    JsonPipe
   ],
   templateUrl: './pick-pokemons.html',
   styleUrl: './pick-pokemons.css'
@@ -57,10 +52,12 @@ export class PickPokemons implements OnInit {
       selectedPokemonId = selectedPokemonId.filter(item => item !== id)
     }
 
-    this.formGroup.get('selectedPokemonId')?.setValue?.(selectedPokemonId);
+    this.formGroup.get('selectedPokemonId')?.patchValue?.(selectedPokemonId);
   }
 
-  handleSubmit($event: any) {
-    console.log(this.formGroup)
+  async handleSubmit() {
+    console.log(this.formGroup);
+    if (!this.formGroup.valid) return;
+    // await this.router.navigate(['team-builder', 'build', 'potions'])
   }
 }

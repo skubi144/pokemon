@@ -34,8 +34,8 @@ export function createNewTeamForm(): NewTeamFormGroup {
     pokemons: new FormGroup({
       selectedPokemonId: new FormControl<string[]>([], {
         nonNullable: true,
-        validators: [Validators.minLength(1), Validators.maxLength(6)]
+        validators: [Validators.maxLength(6)]
       }),
-    }, {updateOn: "submit"}),
+    },),
   });
 }

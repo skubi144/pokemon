@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="Add next">
+    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/pokemon-app/eslint.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/pokedex/pokemon-list/pokemon-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/common/form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/common/form.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/routing/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +83,7 @@
       <updated>1751702598387</updated>
       <workItem from="1751702599984" duration="61000" />
       <workItem from="1751702695264" duration="1493000" />
-      <workItem from="1751901502802" duration="22729000" />
+      <workItem from="1751901502802" duration="25971000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -234,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752169595720</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add next">
+      <option name="closed" value="true" />
+      <created>1752171631546</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1752171631546</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,10 +267,10 @@
     <MESSAGE value="init ng zorro" />
     <MESSAGE value="add models" />
     <MESSAGE value="add modelsn" />
-    <MESSAGE value="update" />
     <MESSAGE value="add tags" />
     <MESSAGE value="Update" />
     <MESSAGE value="Add next" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add next" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
