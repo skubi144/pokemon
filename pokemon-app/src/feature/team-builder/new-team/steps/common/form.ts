@@ -22,7 +22,7 @@ export type PickItemsFormGroup = FormGroup<{
 }>;
 
 export type NewTeamFormGroup = FormGroup<{
-  baseParams: BaseParamsFormGroup;
+  base: BaseParamsFormGroup;
   pokemons: PickItemsFormGroup;
   potions: PickItemsFormGroup;
   berries: PickItemsFormGroup;
@@ -30,7 +30,7 @@ export type NewTeamFormGroup = FormGroup<{
 
 export function createNewTeamForm(): NewTeamFormGroup {
   return new FormGroup({
-    baseParams: new FormGroup({
+    base: new FormGroup({
         name: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
       },
       {updateOn: "submit"}),

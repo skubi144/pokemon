@@ -34,7 +34,7 @@ export class BaseParams implements OnInit {
   }
 
   ngOnInit(): void {
-    this.formGroup = this.teamBuilderService.formGroup.get('baseParams') as BaseParamsFormGroup
+    this.formGroup = this.teamBuilderService.formGroup.get('base') as BaseParamsFormGroup
   }
 
   async handleSubmit() {
