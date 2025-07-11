@@ -1,15 +1,15 @@
-import {Component, DestroyRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {NzButtonComponent} from "ng-zorro-antd/button";
-import {NzDropdownMenuComponent} from "ng-zorro-antd/dropdown";
+import {Component, DestroyRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {NzButtonComponent, NzButtonModule} from "ng-zorro-antd/button";
+import {NzDropdownMenuComponent, NzDropDownModule} from "ng-zorro-antd/dropdown";
 import {
   NzFilterTriggerComponent,
   NzTableCellDirective,
-  NzTableComponent,
+  NzTableComponent, NzTableModule,
   NzTbodyComponent,
   NzTdAddOnComponent, NzThAddOnComponent, NzTheadComponent, NzThMeasureDirective, NzTrDirective
 } from "ng-zorro-antd/table";
-import {NzIconDirective} from "ng-zorro-antd/icon";
-import {NzInputDirective} from "ng-zorro-antd/input";
+import {NzIconDirective, NzIconModule} from "ng-zorro-antd/icon";
+import {NzInputDirective, NzInputModule} from "ng-zorro-antd/input";
 import {NzWaveDirective} from "ng-zorro-antd/core/wave";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
@@ -19,24 +19,22 @@ import {Subscription} from 'rxjs';
 import {PokemonService} from '../../../data-access/services/pokemon-service';
 import {LoadingService} from '../../../data-access/services/loading-service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import {JsonPipe} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
+import {NzFlexDirective} from 'ng-zorro-antd/flex';
 
 @Component({
   selector: 'app-table',
   imports: [
     NzTableComponent,
-    NzFilterTriggerComponent,
-    NzIconDirective,
-    NzTdAddOnComponent,
-    NzDropdownMenuComponent,
-    NzButtonComponent,
-    NzInputDirective,
-    FormsModule,
-    NzThAddOnComponent
+    FormsModule, NzButtonModule,
+    NzDropDownModule, NzIconModule, NzInputModule,
+    NzTableModule, NzFlexDirective,
   ],
   templateUrl: './table.html',
   styleUrl: './table.css'
 })
-export class Table implements OnInit {
+export class Table implements OnInit, OnChanges {
   @Input({required: true}) rows: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = [];
   @Input() selectable = false;
   @Input() loading = false;
@@ -60,9 +58,17 @@ export class Table implements OnInit {
   constructor() {
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!changes['rows']) return;
+
+    this.filteredRows = [...changes['rows'].currentValue];
+    this.search()
+  }
+
   ngOnInit(): void {
     this.filteredRows = [...this.rows];
   }
+
 
   handleDblClick(name: string) {
     this.dblClick.emit(name)

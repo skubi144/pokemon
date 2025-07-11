@@ -13,7 +13,11 @@
     <th nzCustomFilter>
       Name
       <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
+       <div nz-flex [nzGap]="'8px'">
         <nz-icon nzType="search"/>
+         {{searchValue}}
+
+       </div>
       </nz-filter-trigger>
     </th>
   </tr>

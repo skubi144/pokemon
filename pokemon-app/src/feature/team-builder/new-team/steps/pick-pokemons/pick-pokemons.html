@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
   <nz-form-item>
-    <nz-form-control [nzErrorTip]="'aazaaaa'">
+    <nz-form-control>
       <app-pokemon-list (toggleItem)="handleToggleItem($event)" [selectable]="true"
                         [selectedItemId]="currentSelectedPokemonsId"/>
       <div class="ant-form-item-explain-error">
