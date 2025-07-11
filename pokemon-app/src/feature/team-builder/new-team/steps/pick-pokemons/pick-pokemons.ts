@@ -53,6 +53,7 @@ export class PickPokemons implements OnInit {
       itemsId = itemsId.filter(item => item !== id)
     }
     this.formGroup.get('selectedId')?.setValue?.(itemsId);
+    this.formGroup.markAsDirty()
   }
 
   async handleSubmit() {

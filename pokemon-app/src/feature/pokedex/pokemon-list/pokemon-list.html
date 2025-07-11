@@ -1,2 +1,7 @@
-<app-table [selectable]="selectable" [loading]="loadingService.isLoading()" [rows]="rows" (dblClick)="handleSelectPokemon($event)" (toggleItem)="handleToggleItem($event)"/>
+<app-table [selectable]="selectable"
+           [loading]="loadingService.isLoading()"
+           [rows]="rows"
+           [selectedItemId]="selectedItemId"
+           (dblClick)="handleSelectPokemon($event)"
+           (toggleItem)="handleToggleItem($event)"></app-table>
 <app-pokemon-details *ngIf="selectedPokemonName" [pokemonName]="selectedPokemonName" (close)="handleUnselectPokemon()"/>

@@ -44,6 +44,7 @@ export class Berries {
         this.selectedId = [...value.selectedId ?? []]
       })
     this.selectedId = [...this.formGroup.get('selectedId')?.value ?? []]
+    this.formGroup.markAsDirty()
   }
 
   initData() {

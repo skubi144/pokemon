@@ -18,6 +18,7 @@ import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors} from '@angular/c
 import {baseApiInterceptor} from '../data-access/interceptors/base-api-interceptor';
 import {loadingInterceptor} from '../data-access/interceptors/loading-interceptor';
 import {provideTypeIcons} from '../shared/ui/type-icons-module/type-icons-module';
+import {NzModalModule,} from 'ng-zorro-antd/modal';
 
 registerLocaleData(pl);
 
@@ -30,6 +31,7 @@ export const appConfig: ApplicationConfig = {
     provideNzIcons(icons),
     provideNzI18n(pl_PL),
     importProvidersFrom(FormsModule),
+    importProvidersFrom(NzModalModule),
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([baseApiInterceptor, loadingInterceptor])),
   ]

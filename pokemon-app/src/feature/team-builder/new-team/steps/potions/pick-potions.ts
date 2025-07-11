@@ -70,6 +70,7 @@ export class PickPotions implements OnInit {
     }
 
     this.formGroup.get('selectedId')?.patchValue?.(selectedPokemonId);
+    this.formGroup.markAsDirty()
   }
 
   async handleSubmit() {
