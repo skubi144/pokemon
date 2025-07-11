@@ -58,6 +58,7 @@ export class PickPokemons implements OnInit {
   async handleSubmit() {
     console.log(this.formGroup);
     if (!this.formGroup.valid) return;
-    // await this.router.navigate(['team-builder', 'build', 'potions'])
+
+    await this.router.navigate(['team-builder', 'build', 'potions'])
   }
 }

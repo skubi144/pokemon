@@ -13,39 +13,26 @@ import {LoadingService} from '../../../data-access/services/loading-service';
 import {
   ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner
 } from '../../../data-access/model/apiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner';
-import {RouterLink, RouterOutlet} from '@angular/router';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {PokemonDetails} from './pokemon-details/pokemon-details';
 import {NgIf} from '@angular/common';
+import {Table} from '../../../shared/ui/table/table';
 
 @Component({
   selector: 'app-pokemon-list',
   imports: [
-    FormsModule, NzButtonModule, NzDropDownModule, NzIconModule, NzInputModule, NzTableModule, RouterOutlet, RouterLink, PokemonDetails, NgIf
+    FormsModule, NzButtonModule, NzDropDownModule, NzIconModule, NzInputModule, NzTableModule, PokemonDetails, NgIf, Table
   ],
   templateUrl: './pokemon-list.html',
   styleUrl: './pokemon-list.css'
 })
 export class PokemonList implements OnInit {
   @Input() selectable = false;
-  @Input() selectedItemId:string[] = [];
+  @Input() selectedItemId: string[] = [];
   @Output() toggleItem = new EventEmitter<{ id: string; value: boolean }>();
   rows: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = [];
   pokemonListSubscription!: Subscription;
   selectedPokemonName?: string;
-  searchValue = '';
-  visible = false;
-  filteredRows: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = []
-
-  reset(): void {
-    this.searchValue = '';
-    this.filteredRows = this.rows;
-  }
-
-  search(): void {
-    this.visible = false;
-    this.filteredRows = this.filteredRows.filter((item) => item.name.indexOf(this.searchValue) !== -1);
-  }
 
   constructor(private destroyRef: DestroyRef, private pokemonService: PokemonService, protected loadingService: LoadingService) {
   }
@@ -57,7 +44,6 @@ export class PokemonList implements OnInit {
       .subscribe({
         next: (payload) => {
           this.rows = payload;
-          this.filteredRows = payload;
         }
       })
   }
@@ -70,9 +56,7 @@ export class PokemonList implements OnInit {
     this.selectedPokemonName = undefined;
   }
 
-  onItemChecked(id: string, value: boolean) {
-    const payload = {id, value}
-
-    this.toggleItem.emit(payload)
+  handleToggleItem($event: { id: string; value: boolean; }) {
+    this.toggleItem.emit($event);
   }
 }

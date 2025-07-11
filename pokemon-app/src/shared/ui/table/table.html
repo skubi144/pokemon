@@ -1,0 +1,46 @@
+<nz-table #nzTable
+          [nzData]="filteredRows"
+          [nzFrontPagination]="true"
+          [nzLoading]="loading"
+>
+  <thead>
+  <tr>
+    @if (selectable) {
+      <th [style.width]="'120px'">
+        Checked
+      </th>
+    }
+    <th nzCustomFilter>
+      Name
+      <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
+        <nz-icon nzType="search"/>
+      </nz-filter-trigger>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (data of nzTable.data; track data.name) {
+      <tr [style.cursor]="'pointer'" (dblclick)="handleDblClick(data.name)">
+        @if (selectable) {
+          <td
+            [nzChecked]="selectedItemId.includes(data.name)"
+            [nzLabel]="data.name"
+            (nzCheckedChange)="onItemChecked(data.name, $event)"
+          ></td>
+        }
+        <td>
+          {{ data.name }}
+        </td>
+      </tr>
+    }
+  </tbody>
+</nz-table>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div class="ant-table-filter-dropdown">
+    <div class="search-box">
+      <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue" (keydown.enter)="search() "/>
+      <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">Search</button>
+      <button nz-button nzSize="small" (click)="reset()">Reset</button>
+    </div>
+  </div>
+</nz-dropdown-menu>

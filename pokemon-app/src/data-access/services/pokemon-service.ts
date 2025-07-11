@@ -26,4 +26,20 @@ export class PokemonService {
       results
     ));
   }
+
+  getBerriesAll() {
+    return this.http.get<{
+      results: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]
+    }>(`/berry?limit=100000&offset=0`).pipe(map(({results}) =>
+      results
+    ));
+  }
+
+  getPotionsAll() {
+    return this.http.get<{
+      results: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]
+    }>(`/pokemon?limit=100000&offset=0`).pipe(map(({results}) =>
+      results
+    ));
+  }
 }
