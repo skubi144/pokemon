@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
   <nz-form-item>
     <nz-form-control>
-      <app-table [rows]="potions" (toggleItem)="handleToggleItem($event)" [selectable]="true"
+      <app-table [loading]="loadingService.isLoading()" [rows]="potions" (toggleItem)="handleToggleItem($event)" [selectable]="true"
                         [selectedItemId]="selectedId"/>
       <div class="ant-form-item-explain-error">
         @if (formGroup.controls?.['selectedId']?.errors?.['maxlength']) {
@@ -14,7 +14,7 @@
     </nz-form-control>
   </nz-form-item>
   <div nz-flex nzGap="large">
-    <a nz-button [routerLink]="'/team-builder/build/pokemon'">Go back</a>
+    <a nz-button [routerLink]="'/team-builder/build/pokemons'">Go back</a>
     <button [disabled]="selectedId.length===0" nz-button nzType="primary">Next</button>
   </div>
 </form>

@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {NzFlexDirective} from 'ng-zorro-antd/flex';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {Table} from '../../../../../shared/ui/table/table';
+import {LoadingService} from '../../../../../data-access/services/loading-service';
 
 @Component({
   selector: 'app-pick-potions',
@@ -32,7 +33,7 @@ export class PickPotions implements OnInit {
   selectedId: string[] = []
   potions: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = []
 
-  constructor(private onDestroy: DestroyRef, private teamBuilderService: TeamBuilderService, private router: Router, private pokemonService: PokemonService) {
+  constructor(protected loadingService: LoadingService, private onDestroy: DestroyRef, private teamBuilderService: TeamBuilderService, private router: Router, private pokemonService: PokemonService) {
   }
 
   initFormGroup(): void {
