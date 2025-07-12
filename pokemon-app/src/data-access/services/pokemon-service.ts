@@ -15,7 +15,7 @@ import {
 } from '../model';
 import {catchError, map, Observable, shareReplay, throwError} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core'; // dostosuj ścieżkę
+import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 export class PokemonService {
