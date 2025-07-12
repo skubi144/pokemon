@@ -27,6 +27,7 @@
     "@angular/forms": "^20.1.0",
     "@angular/platform-browser": "^20.1.0",
     "@angular/router": "^20.1.0",
+    "@swimlane/ngx-charts": "^23.0.0-alpha.0",
     "less": "^4.3.0",
     "ng-zorro-antd": "^20.0.0",
     "pokeapi-typescript": "^3.0.3",
