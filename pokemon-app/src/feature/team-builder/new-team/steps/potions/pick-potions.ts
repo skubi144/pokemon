@@ -13,6 +13,7 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {Table} from '../../../../../shared/ui/table/table';
 import {LoadingService} from '../../../../../data-access/services/loading-service';
+import {AbstractPickItemsComponent} from '../common/abstract-pick-items';
 
 @Component({
   selector: 'app-pick-potions',
@@ -28,52 +29,30 @@ import {LoadingService} from '../../../../../data-access/services/loading-servic
   templateUrl: './pick-potions.html',
   styleUrl: './pick-potions.css'
 })
-export class PickPotions implements OnInit {
-  formGroup!: PickItemsFormGroup;
-  selectedId: string[] = []
+export class PickPotions extends AbstractPickItemsComponent {
   potions: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = []
 
-  constructor(protected loadingService: LoadingService, private onDestroy: DestroyRef, private teamBuilderService: TeamBuilderService, private router: Router, private pokemonService: PokemonService) {
+  constructor(protected override destroyRef: DestroyRef,
+              protected loadingService: LoadingService,
+              private teamBuilderService: TeamBuilderService,
+              private pokemonService: PokemonService,
+              private router: Router) {
+    super(destroyRef);
   }
 
-  initFormGroup(): void {
-    this.formGroup = this.teamBuilderService.formGroup.get('potions') as PickItemsFormGroup
-    this.formGroup.valueChanges
-      .pipe(takeUntilDestroyed(this.onDestroy))
-      .subscribe(value => {
-        this.selectedId = [...value.selectedId ?? []]
-      })
-    this.selectedId = [...this.formGroup.get('selectedId')?.value ?? []]
+  override getFormGroup(): PickItemsFormGroup {
+    return this.teamBuilderService.formGroup.get('potions') as PickItemsFormGroup;
   }
 
-  initData() {
+  override initData() {
     this.pokemonService.getPotionsAll()
-      .pipe(takeUntilDestroyed(this.onDestroy))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(data => {
         this.potions = data
       })
   }
 
-  ngOnInit(): void {
-    this.initFormGroup();
-    this.initData();
-  }
-
-
-  handleToggleItem($event: { id: string; value: boolean }) {
-    const {id, value} = $event;
-    let selectedPokemonId = [...(this.formGroup.get('selectedId')?.value ?? []) as string[]];
-    if (value) {
-      selectedPokemonId.push(id)
-    } else {
-      selectedPokemonId = selectedPokemonId.filter(item => item !== id)
-    }
-
-    this.formGroup.get('selectedId')?.patchValue?.(selectedPokemonId);
-    this.formGroup.markAsDirty()
-  }
-
-  async handleSubmit() {
+  override async handleSubmit() {
     if (!this.formGroup.valid) return;
 
     await this.router.navigate(['team-builder', 'build', 'berries'])

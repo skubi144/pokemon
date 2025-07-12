@@ -5,10 +5,11 @@ import {Router, RouterLink} from '@angular/router';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {PickItemsFormGroup} from '../common/form';
 import {TeamBuilderService} from '../../service/team-builder-service';
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
-import {NzFormControlComponent, NzFormItemComponent, NzFormLabelComponent} from 'ng-zorro-antd/form';
+import {NzFormControlComponent, NzFormItemComponent} from 'ng-zorro-antd/form';
+import {LoadingService} from '../../../../../data-access/services/loading-service';
+import {AbstractPickItemsComponent} from '../common/abstract-pick-items';
 
 @Component({
   selector: 'app-pick-pokemons',
@@ -26,34 +27,19 @@ import {NzFormControlComponent, NzFormItemComponent, NzFormLabelComponent} from 
   templateUrl: './pick-pokemons.html',
   styleUrl: './pick-pokemons.css'
 })
-export class PickPokemons implements OnInit {
-  formGroup!: PickItemsFormGroup;
-  selectedId: string[] = this.formGroup?.get('selectedId')?.value ?? []
-
-  constructor(private onDestroy: DestroyRef, private teamBuilderService: TeamBuilderService, private router: Router) {
+export class PickPokemons extends AbstractPickItemsComponent {
+  constructor(protected override destroyRef: DestroyRef,
+              protected loadingService: LoadingService,
+              private teamBuilderService: TeamBuilderService,
+              private router: Router) {
+    super(destroyRef);
   }
 
-  ngOnInit(): void {
-    this.formGroup = this.teamBuilderService.formGroup.get('pokemons') as PickItemsFormGroup
-    this.formGroup.valueChanges
-      .pipe(takeUntilDestroyed(this.onDestroy))
-      .subscribe(value => {
-        this.selectedId = [...value.selectedId ?? []]
-      })
-    this.selectedId = [...this.formGroup?.get('selectedId')?.value ?? []]
+  protected override initData(): void {
   }
 
-
-  handleToggleItem($event: { id: string; value: boolean }) {
-    const {id, value} = $event;
-    let itemsId = [...(this.formGroup.get('selectedId')?.value ?? []) as string[]];
-    if (value) {
-      itemsId.push(id)
-    } else {
-      itemsId = itemsId.filter(item => item !== id)
-    }
-    this.formGroup.get('selectedId')?.setValue?.(itemsId);
-    this.formGroup.markAsDirty()
+  override getFormGroup(): PickItemsFormGroup {
+    return this.teamBuilderService.formGroup.get('pokemons') as PickItemsFormGroup
   }
 
   async handleSubmit() {
