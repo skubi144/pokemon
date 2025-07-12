@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/common/abstract-pick-items.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/potions/pick-potions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/potions/pick-potions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +75,7 @@
       <updated>1751702598387</updated>
       <workItem from="1751702599984" duration="61000" />
       <workItem from="1751702695264" duration="1493000" />
-      <workItem from="1751901502802" duration="39701000" />
+      <workItem from="1751901502802" duration="40463000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -314,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752266111675</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="update">
+      <option name="closed" value="true" />
+      <created>1752320288661</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1752320288662</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
