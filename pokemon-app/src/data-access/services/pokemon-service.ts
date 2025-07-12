@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {PokemonDetail} from '../model/pokemonDetail';
 import {HttpClient} from '@angular/common/http';
-import {map, Observable, shareReplay} from 'rxjs';
+import {catchError, map, Observable, shareReplay, throwError} from 'rxjs';
 import {
   ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner
 } from '../model/apiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner';
@@ -17,8 +17,14 @@ export class PokemonService {
     if (this.cache.has(key)) {
       return this.cache.get(key)! as Observable<T>;
     }
-    const observable$ = factory().pipe(shareReplay(1));
+    const observable$ = factory().pipe(shareReplay(1),
+      catchError(err => {
+        this.cache.delete(key);
+        return throwError(() => err);
+      }));
+
     this.cache.set(key, observable$);
+
     return observable$;
   }
 
