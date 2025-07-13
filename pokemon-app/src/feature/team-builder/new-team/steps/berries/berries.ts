@@ -14,6 +14,17 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
 import {LoadingService} from '../../../../../data-access/services/loading-service';
 import {AbstractPickItemsComponent} from '../common/abstract-pick-items';
+import {TreeMapModule} from '@swimlane/ngx-charts';
+import {NgIf} from '@angular/common';
+import {forkJoin, map} from 'rxjs';
+
+const INITIAL_STATE = [
+  {"name": "spicy", "value": 0},
+  {"name": "dry", "value": 0},
+  {"name": "sweet", "value": 0},
+  {"name": "bitter", "value": 0},
+  {"name": "sour", "value": 0}
+]
 
 @Component({
   selector: 'app-berries',
@@ -24,13 +35,16 @@ import {AbstractPickItemsComponent} from '../common/abstract-pick-items';
     Table,
     NzFlexDirective,
     NzButtonComponent,
-    RouterLink
+    RouterLink,
+    TreeMapModule,
+    NgIf
   ],
   templateUrl: './berries.html',
   styleUrl: './berries.css'
 })
 export class Berries extends AbstractPickItemsComponent {
-  berries: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = []
+  berries: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = [];
+  flavours: Array<{ name: string; value: number }> = INITIAL_STATE;
 
   constructor(protected override destroyRef: DestroyRef,
               protected loadingService: LoadingService,
@@ -40,12 +54,36 @@ export class Berries extends AbstractPickItemsComponent {
     super(destroyRef);
   }
 
+  updateFlavours(berries: string[]): void {
+    if (berries.length === 0) {
+      this.flavours = INITIAL_STATE;
+    }
+    forkJoin(berries.map(b => this.pokemonService.getBerry(b))).pipe(
+      map(berries => {
+        const statsMap = new Map<string, number>();
+        for (const berry of berries) {
+          for (const flavor of berry.flavors) {
+            const name = flavor.flavor.name ?? '';
+            const current = statsMap.get(name) ?? 0;
+            statsMap.set(name, current + flavor.potency);
+          }
+        }
+        return Array.from(statsMap.entries()).map(([name, value]) => ({name, value}));
+      })
+    ).subscribe(result => {
+      this.flavours = result;
+    })
+  }
+
   override initData() {
     this.pokemonService.getBerriesAll()
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(data => {
         this.berries = data
       })
+    this.formGroup.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({selectedId}) => {
+      this.updateFlavours(selectedId ?? []);
+    })
   }
 
   override getFormGroup(): PickItemsFormGroup {

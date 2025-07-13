@@ -11,7 +11,8 @@ import {
   VersionGroupDetail,
   VersionGroupSummary,
   AbilityDetailPokemonInnerPokemon,
-  ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner
+  ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner,
+  BerryDetail
 } from '../model';
 import {catchError, map, Observable, shareReplay, throwError} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
@@ -21,7 +22,8 @@ import {Injectable} from '@angular/core';
 export class PokemonService {
   private cache = new Map<string, Observable<unknown>>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   private getOrCache<T>(key: string, factory: () => Observable<T>): Observable<T> {
     if (this.cache.has(key)) {
@@ -47,7 +49,7 @@ export class PokemonService {
 
   getPokemonAll(): Observable<AbilityDetailPokemonInnerPokemon[]> {
     return this.getOrCache('pokemon-all', () =>
-      this.http.get<{results: AbilityDetailPokemonInnerPokemon[]}>('/pokemon?limit=100000&offset=0')
+      this.http.get<{ results: AbilityDetailPokemonInnerPokemon[] }>('/pokemon?limit=100000&offset=0')
         .pipe(map(res => res.results))
     );
   }
@@ -61,7 +63,7 @@ export class PokemonService {
 
   getAllStats(): Observable<StatSummary[]> {
     return this.getOrCache('stats-all', () =>
-      this.http.get<{results: StatSummary[]}>('/stat?limit=1000&offset=0')
+      this.http.get<{ results: StatSummary[] }>('/stat?limit=1000&offset=0')
         .pipe(map(res => res.results))
     );
   }
@@ -75,7 +77,7 @@ export class PokemonService {
 
   getAllTypes(): Observable<TypeSummary[]> {
     return this.getOrCache('types-all', () =>
-      this.http.get<{results: TypeSummary[]}>('/type?limit=1000&offset=0')
+      this.http.get<{ results: TypeSummary[] }>('/type?limit=1000&offset=0')
         .pipe(map(res => res.results))
     );
   }
@@ -89,7 +91,7 @@ export class PokemonService {
 
   getAllSuperContestEffects(): Observable<SuperContestEffectSummary[]> {
     return this.getOrCache('super-contest-effects-all', () =>
-      this.http.get<{results: SuperContestEffectSummary[]}>('/super-contest-effect?limit=1000&offset=0')
+      this.http.get<{ results: SuperContestEffectSummary[] }>('/super-contest-effect?limit=1000&offset=0')
         .pipe(map(res => res.results))
     );
   }
@@ -103,25 +105,39 @@ export class PokemonService {
 
   getAllVersions(): Observable<VersionSummary[]> {
     return this.getOrCache('versions-all', () =>
-      this.http.get<{results: VersionSummary[]}>('/version?limit=1000&offset=0')
+      this.http.get<{ results: VersionSummary[] }>('/version?limit=1000&offset=0')
         .pipe(map(res => res.results))
     );
   }
+
   getBerriesAll(): Observable<ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]> {
     return this.getOrCache('berries-all', () =>
-      this.http.get<{results: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]}>(
+      this.http.get<{
+        results: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]
+      }>(
         '/berry?limit=100000&offset=0'
       ).pipe(map(({results}) => results))
     );
   }
 
+  getBerry(idOrName: string | number): Observable<BerryDetail> {
+    return this.getOrCache(`berry-${idOrName}`, () =>
+      this.http.get<BerryDetail>(
+        `/berry/${idOrName}`,
+      )
+    );
+  }
+
   getPotionsAll(): Observable<ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]> {
     return this.getOrCache('potions-all', () =>
-      this.http.get<{items: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]}>(
+      this.http.get<{
+        items: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[]
+      }>(
         '/item-category/healing?limit=100000&offset=0'
       ).pipe(map(({items}) => items))
     );
   }
+
   // Version Groups
   getVersionGroup(id: string | number): Observable<VersionGroupDetail> {
     return this.getOrCache(`version-group-${id}`, () =>
@@ -131,7 +147,7 @@ export class PokemonService {
 
   getAllVersionGroups(): Observable<VersionGroupSummary[]> {
     return this.getOrCache('version-groups-all', () =>
-      this.http.get<{results: VersionGroupSummary[]}>('/version-group?limit=1000&offset=0')
+      this.http.get<{ results: VersionGroupSummary[] }>('/version-group?limit=1000&offset=0')
         .pipe(map(res => res.results))
     );
   }
@@ -144,7 +160,7 @@ export class PokemonService {
 
   getAllAbilities(): Observable<AbilityDetailPokemonInnerPokemon[]> {
     return this.getOrCache('abilities-all', () =>
-      this.http.get<{results: AbilityDetailPokemonInnerPokemon[]}>('/ability?limit=1000&offset=0')
+      this.http.get<{ results: AbilityDetailPokemonInnerPokemon[] }>('/ability?limit=1000&offset=0')
         .pipe(map(res => res.results))
     );
   }

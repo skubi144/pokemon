@@ -64,7 +64,6 @@ export class Table implements OnInit, OnChanges {
       this.filteredRows = [...changes['rows'].currentValue];
       this.search()
     }
-    console.log({changes});
   }
 
   ngOnInit(): void {

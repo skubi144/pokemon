@@ -1,33 +1,34 @@
-<div nz-flex nzWrap="wrap">
-  <ngx-charts-number-card
-    [scheme]="colorScheme"
-    [results]="currentStats"
-    [cardColor]="cardColor"
-    [animations]="true"
-  >
-  </ngx-charts-number-card>
-</div>
-
-<form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
-  <nz-form-item>
-    <nz-form-control>
-      <app-pokemon-list
-        (toggleItem)="handleToggleItem($event)"
-        [selectable]="true"
-        [selectedItemId]="selectedId"
-      ></app-pokemon-list>
-      <div class="ant-form-item-explain-error">
-        <ng-container *ngIf="formGroup.controls?.['selectedId']?.errors?.['maxlength']">
-          You can add up to 6 pokemons
-        </ng-container>
-        <ng-container *ngIf="formGroup.controls?.['selectedId']?.errors?.['minlength']">
-          You need to add at least 1 pokemon
-        </ng-container>
-      </div>
-    </nz-form-control>
-  </nz-form-item>
-  <div nz-flex nzGap="large">
-    <a nz-button [routerLink]="'/team-builder/build/base'">Go back</a>
-    <button [disabled]="selectedId.length===0" nz-button nzType="primary">Next</button>
+<div nz-flex nzGap="large" nzVertical>
+  <div nz-flex nzWrap="wrap">
+    <ngx-charts-number-card
+      [scheme]="colorScheme"
+      [results]="currentStats"
+      [cardColor]="cardColor"
+      [animations]="true"
+    >
+    </ngx-charts-number-card>
   </div>
-</form>
+  <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
+    <nz-form-item>
+      <nz-form-control>
+        <app-pokemon-list
+          (toggleItem)="handleToggleItem($event)"
+          [selectable]="true"
+          [selectedItemId]="selectedId"
+        ></app-pokemon-list>
+        <div class="ant-form-item-explain-error">
+          <ng-container *ngIf="formGroup.controls?.['selectedId']?.errors?.['maxlength']">
+            You can add up to 6 pokemons
+          </ng-container>
+          <ng-container *ngIf="formGroup.controls?.['selectedId']?.errors?.['minlength']">
+            You need to add at least 1 pokemon
+          </ng-container>
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <div nz-flex nzGap="large">
+      <a nz-button [routerLink]="'/team-builder/build/base'">Go back</a>
+      <button [disabled]="selectedId.length===0" nz-button nzType="primary">Next</button>
+    </div>
+  </form>
+</div>

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="update" />
+    <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/data-access/services/pokemon-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/new-team.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/new-team.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/shared/ui/table/table.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/shared/ui/table/table.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +82,7 @@
       <workItem from="1751702599984" duration="61000" />
       <workItem from="1751702695264" duration="1493000" />
       <workItem from="1751901502802" duration="46150000" />
+      <workItem from="1752404554287" duration="2676000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -379,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752334003728</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="update">
+      <option name="closed" value="true" />
+      <created>1752405536654</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1752405536654</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +430,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/pokemon-app/src/shared/ui/table/table.ts</url>
           <line>42</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

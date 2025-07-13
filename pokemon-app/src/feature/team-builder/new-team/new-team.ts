@@ -71,6 +71,5 @@ export class NewTeam implements OnInit {
 
   ngOnInit(): void {
     this.initSegmentDetector();
-    this.teamBuilderService.formGroup.valueChanges.subscribe(console.log)
   }
 }
