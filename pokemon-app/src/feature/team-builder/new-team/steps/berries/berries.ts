@@ -45,6 +45,7 @@ const INITIAL_STATE = [
 export class Berries extends AbstractPickItemsComponent {
   berries: ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner[] = [];
   flavours: Array<{ name: string; value: number }> = INITIAL_STATE;
+  shouldRenderTreeMap = false;
 
   constructor(protected override destroyRef: DestroyRef,
               protected loadingService: LoadingService,
@@ -57,6 +58,7 @@ export class Berries extends AbstractPickItemsComponent {
   updateFlavours(berries: string[]): void {
     if (berries.length === 0) {
       this.flavours = INITIAL_STATE;
+      this.shouldRenderTreeMap = false;
     }
     forkJoin(berries.map(b => this.pokemonService.getBerry(b))).pipe(
       map(berries => {
@@ -72,6 +74,7 @@ export class Berries extends AbstractPickItemsComponent {
       })
     ).subscribe(result => {
       this.flavours = result;
+      this.shouldRenderTreeMap = true;
     })
   }
 
@@ -93,6 +96,6 @@ export class Berries extends AbstractPickItemsComponent {
   override async handleSubmit() {
     if (!this.formGroup.valid) return;
 
-    await this.router.navigate(['team-builder', 'build', 'berries'])
+    await this.router.navigate(['team-builder', 'build', 'summary'])
   }
 }

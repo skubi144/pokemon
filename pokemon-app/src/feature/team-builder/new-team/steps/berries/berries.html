@@ -1,6 +1,6 @@
 <div nz-flex nzVertical nzGap="large">
 
-  <div nz-flex>
+  <div nz-flex *ngIf="shouldRenderTreeMap">
     <ngx-charts-tree-map
       [results]="flavours"
       [animations]="true"/>

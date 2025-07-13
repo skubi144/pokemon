@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PokemonDetail} from '../../../data-access/model/pokemonDetail';
 import {PokemonService} from '../../../data-access/services/pokemon-service';
 import {PokemonCard} from '../../../shared/ui/pokemon-card/pokemon-card';
@@ -18,7 +18,7 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
   styleUrl: './pokemon-list.css'
 })
 export class PokemonList implements OnInit {
-  userPokemon = ['pikachu', 'raichu', 'snorlax', 'ekans'];
+  @Input() userPokemon:string[] = [];
   pokemons$!: Observable<PokemonDetail[]>;
 
   constructor(private pokemonService: PokemonService) {

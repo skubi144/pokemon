@@ -10,8 +10,9 @@
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/new-team.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/new-team.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/berries/berries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/shared/ui/table/table.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/shared/ui/table/table.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/new-team/steps/pick-pokemons/pick-pokemons.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/pokemon-list/pokemon-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/team-builder/routing/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,7 @@
       <workItem from="1751702599984" duration="61000" />
       <workItem from="1751702695264" duration="1493000" />
       <workItem from="1751901502802" duration="46150000" />
-      <workItem from="1752404554287" duration="2676000" />
+      <workItem from="1752404554287" duration="4823000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -396,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752405536654</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update">
+      <option name="closed" value="true" />
+      <created>1752407941883</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1752407941883</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

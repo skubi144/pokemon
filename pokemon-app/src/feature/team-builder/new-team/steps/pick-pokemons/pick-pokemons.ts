@@ -14,6 +14,7 @@ import {Color, NumberCardModule, ScaleType} from '@swimlane/ngx-charts';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {forkJoin, map} from 'rxjs';
 import {PokemonService} from '../../../../../data-access/services/pokemon-service';
+import {NgIf} from '@angular/common';
 
 const INITIAL_STATS = [
   {
@@ -55,6 +56,7 @@ const INITIAL_STATS = [
     NzFormItemComponent,
     NzRowDirective,
     NumberCardModule,
+    NgIf,
   ],
   templateUrl: './pick-pokemons.html',
   styleUrl: './pick-pokemons.css'

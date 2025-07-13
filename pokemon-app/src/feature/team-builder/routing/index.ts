@@ -6,6 +6,7 @@ import {PickPokemons} from '../new-team/steps/pick-pokemons/pick-pokemons';
 import {PickPotions,} from '../new-team/steps/potions/pick-potions';
 import {Berries} from '../new-team/steps/berries/berries';
 import {saveAlertGuard} from '../new-team/guards/save-alert-guard';
+import {Summary} from '../new-team/steps/summary/summary';
 
 export const routes: Routes = [
   {path: '', component: TeamList,},
@@ -15,6 +16,7 @@ export const routes: Routes = [
       {path: 'pokemons', component: PickPokemons},
       {path: 'potions', component: PickPotions},
       {path: 'berries', component: Berries},
+      {path: 'summary', component: Summary},
     ]
   },
 ]

@@ -14,6 +14,7 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
         <nz-step nzTitle="Pick pokemons" [nzStatus]="getStatus('pokemons')" nzIcon="aliwangwang"></nz-step>
         <nz-step nzTitle="Pick potions" [nzStatus]="getStatus('potions')" nzIcon="experiment"></nz-step>
         <nz-step nzTitle="Pick berries" [nzStatus]="getStatus('berries')" nzIcon="gift"></nz-step>
+        <nz-step nzTitle="Summary" [nzStatus]="getStatus('summary')" nzIcon="appstore"></nz-step>
       </nz-steps>
       <router-outlet></router-outlet>
     </div>
@@ -29,7 +30,7 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
   ]
 })
 export class NewTeam implements OnInit {
-  steps = ['base', 'pokemons', 'potions', 'berries'];
+  steps = ['base', 'pokemons', 'potions', 'berries','summary'];
   currentChildPath: string | null = null
   currentStepId = 0;
 

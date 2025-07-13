@@ -12,7 +12,7 @@ import {
   VersionGroupSummary,
   AbilityDetailPokemonInnerPokemon,
   ApiV2PokemonEncountersRetrieve200ResponseInnerVersionDetailsInnerEncounterDetailsInnerConditionValuesInner,
-  BerryDetail
+  BerryDetail, PokemonSpeciesDetail, NatureDetail
 } from '../model';
 import {catchError, map, Observable, shareReplay, throwError} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
@@ -125,6 +125,18 @@ export class PokemonService {
       this.http.get<BerryDetail>(
         `/berry/${idOrName}`,
       )
+    );
+  }
+
+  getNature(name: string): Observable<NatureDetail> {
+    return this.getOrCache(`nature-${name}`, () =>
+      this.http.get<NatureDetail>(`/nature/${name}`)
+    );
+  }
+
+  getPokemonSpecies(id: string | number): Observable<PokemonSpeciesDetail> {
+    return this.getOrCache(`pokemon-species-${id}`, () =>
+      this.http.get<PokemonSpeciesDetail>(`/pokemon-species/${id}`)
     );
   }
 

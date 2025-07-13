@@ -1,0 +1,22 @@
+<div *ngIf="loading" class="loading-container">
+  Loading...
+</div>
+
+<div *ngIf="!loading && chartData.length">
+  <ngx-charts-line-chart
+    [results]="chartData"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    xAxisLabel="Berry"
+    yAxisLabel="Potency"
+    [autoScale]="true"
+    [scheme]="colorScheme">
+  </ngx-charts-line-chart>
+</div>
+
+<div *ngIf="!loading && !chartData.length">
+  No data available.
+</div>
