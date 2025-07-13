@@ -12,7 +12,7 @@ import {LoadingService} from '../../../../../data-access/services/loading-servic
 import {AbstractPickItemsComponent} from '../common/abstract-pick-items';
 import {Color, NumberCardModule, ScaleType} from '@swimlane/ngx-charts';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import {forkJoin, from, map, startWith} from 'rxjs';
+import {forkJoin, map} from 'rxjs';
 import {PokemonService} from '../../../../../data-access/services/pokemon-service';
 
 const INITIAL_STATS = [
@@ -71,7 +71,7 @@ export class PickPokemons extends AbstractPickItemsComponent {
   colorScheme: Color = {
     name: 'ng-zorro-compatible',
     selectable: false,
-    group: ScaleType.Ordinal,
+    group: ScaleType.Quantile,
     domain: [
       '#52c41a',
       '#f5222d',
@@ -107,7 +107,7 @@ export class PickPokemons extends AbstractPickItemsComponent {
             statsMap.set(name, current + stat.base_stat);
           }
         }
-        return Array.from(statsMap.entries()).map(([name, value]) => ({ name, value }));
+        return Array.from(statsMap.entries()).map(([name, value]) => ({name, value}));
       })
     ).subscribe(result => {
       this.currentStats = result;

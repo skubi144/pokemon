@@ -49,7 +49,7 @@ export class Berries extends AbstractPickItemsComponent {
   }
 
   override getFormGroup(): PickItemsFormGroup {
-    return this.teamBuilderService.formGroup.get('pokemons') as PickItemsFormGroup;
+    return this.teamBuilderService.formGroup.get('berries') as PickItemsFormGroup;
   }
 
   override async handleSubmit() {

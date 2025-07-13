@@ -4,21 +4,25 @@ import {NzStepComponent, NzStepsComponent} from 'ng-zorro-antd/steps';
 import {filter, map, of, startWith, switchMap} from 'rxjs';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {TeamBuilderService} from './service/team-builder-service';
+import {NzFlexDirective} from 'ng-zorro-antd/flex';
 
 @Component({
   template: `
-    <nz-steps>
-      <nz-step nzTitle="Base information" [nzStatus]="getStatus('base')" nzIcon="info-circle"></nz-step>
-      <nz-step nzTitle="Pick pokemons" [nzStatus]="getStatus('pokemons')" nzIcon="aliwangwang"></nz-step>
-      <nz-step nzTitle="Pick potions" [nzStatus]="getStatus('potions')" nzIcon="experiment"></nz-step>
-      <nz-step nzTitle="Pick berries" [nzStatus]="getStatus('berries')" nzIcon="gift"></nz-step>
-    </nz-steps>
-    <router-outlet></router-outlet>
+    <div nz-flex [nzVertical]="true" nzGap="large">
+      <nz-steps>
+        <nz-step nzTitle="Base information" [nzStatus]="getStatus('base')" nzIcon="info-circle"></nz-step>
+        <nz-step nzTitle="Pick pokemons" [nzStatus]="getStatus('pokemons')" nzIcon="aliwangwang"></nz-step>
+        <nz-step nzTitle="Pick potions" [nzStatus]="getStatus('potions')" nzIcon="experiment"></nz-step>
+        <nz-step nzTitle="Pick berries" [nzStatus]="getStatus('berries')" nzIcon="gift"></nz-step>
+      </nz-steps>
+      <router-outlet></router-outlet>
+    </div>
   `,
   imports: [
     RouterOutlet,
     NzStepsComponent,
     NzStepComponent,
+    NzFlexDirective,
   ],
   providers: [
     TeamBuilderService
