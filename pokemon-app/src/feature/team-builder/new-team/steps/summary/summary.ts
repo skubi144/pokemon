@@ -1,10 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {NzFlexDirective} from 'ng-zorro-antd/flex';
-import {NzPageHeaderTitleDirective} from 'ng-zorro-antd/page-header';
+import {NzPageHeaderComponent, NzPageHeaderTitleDirective} from 'ng-zorro-antd/page-header';
 import {PokemonList} from '../../../pokemon-list/pokemon-list';
 import {TeamBuilderService} from '../../service/team-builder-service';
 import {NewTeamFormGroup} from '../common/form';
 import {BerryMatchChart} from '../../components/berry-match-chart/berry-match-chart';
+import {TeamTypeTreeMap} from '../../components/team-type-tree-map/team-type-tree-map';
+import {NzColDirective, NzRowDirective} from 'ng-zorro-antd/grid';
+import {NzCardComponent} from 'ng-zorro-antd/card';
+import {NzCollapseComponent, NzCollapsePanelComponent} from 'ng-zorro-antd/collapse';
 
 @Component({
   selector: 'app-summary',
@@ -12,7 +16,14 @@ import {BerryMatchChart} from '../../components/berry-match-chart/berry-match-ch
     NzFlexDirective,
     NzPageHeaderTitleDirective,
     PokemonList,
-    BerryMatchChart
+    BerryMatchChart,
+    TeamTypeTreeMap,
+    NzRowDirective,
+    NzColDirective,
+    NzPageHeaderComponent,
+    NzCardComponent,
+    NzCollapseComponent,
+    NzCollapsePanelComponent
   ],
   templateUrl: './summary.html',
   styleUrl: './summary.css'

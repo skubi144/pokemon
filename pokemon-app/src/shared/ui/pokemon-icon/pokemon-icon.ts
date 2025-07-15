@@ -11,5 +11,5 @@ import {NzIconDirective} from 'ng-zorro-antd/icon';
   styleUrl: './pokemon-icon.css'
 })
 export class PokemonIcon {
-  @Input({required: true}) name!: PokemonType;
+  @Input({transform: (value: string): PokemonType => value as PokemonType, required: true}) name!: PokemonType;
 }

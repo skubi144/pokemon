@@ -1,11 +1,14 @@
-<div nz-flex nzVertical nzGap="large">
-  <div>
-    <h2 nz-page-header-title>This is your team! - {{ getTeamName() }}</h2>
-  </div>
-  <div>
-    <app-pokemon-list [userPokemon]="getPokemons()"/>
-  </div>
-  <div>
-    <app-berry-match-chart [selectedBerryNames]="getBerryNames()" [selectedPokemonIds]="getPokemons()"/>
-  </div>
-</div>
+<nz-page-header [nzTitle]="'This is your team! - ' + getTeamName()"></nz-page-header>
+
+<nz-collapse nzGhost>
+  <nz-collapse-panel [nzHeader]="'Pokémon List'" [nzActive]="true">
+    <app-pokemon-list [userPokemon]="getPokemons()"></app-pokemon-list>
+  </nz-collapse-panel>
+  <nz-collapse-panel [nzHeader]="'Berry Match Chart'">
+    <app-berry-match-chart [selectedBerryNames]="getBerryNames()"
+                           [selectedPokemonIds]="getPokemons()"></app-berry-match-chart>
+  </nz-collapse-panel>
+  <nz-collapse-panel [nzHeader]="'Team Type Distribution'">
+    <app-team-type-tree-map [selectedPokemonIds]="getPokemons()"></app-team-type-tree-map>
+  </nz-collapse-panel>
+</nz-collapse>

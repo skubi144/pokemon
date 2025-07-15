@@ -4,12 +4,14 @@ import {forkJoin} from 'rxjs';
 import {PokemonService} from '../../../../../data-access/services/pokemon-service';
 import {NgIf} from '@angular/common';
 import {Color, LineChartModule, ScaleType} from '@swimlane/ngx-charts';
+import {Spinner} from '../../../../../shared/ui/spinner/spinner';
 
 @Component({
   selector: 'app-berry-match-chart',
   imports: [
     NgIf,
-    LineChartModule
+    LineChartModule,
+    Spinner
   ],
   templateUrl: './berry-match-chart.html',
   styleUrl: './berry-match-chart.css'

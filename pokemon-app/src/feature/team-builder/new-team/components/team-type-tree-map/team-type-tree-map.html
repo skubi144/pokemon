@@ -1,0 +1,27 @@
+<div class="donut-with-legend">
+  <div>
+    <ngx-charts-pie-chart
+      [results]="treeMapData"
+      [scheme]="colorScheme"
+      [view]="[300,300]"
+      [doughnut]="true"
+      [legend]="false"
+      [labels]="false"
+      [animations]="false"
+      [activeEntries]="activeEntriesArray()"
+    ></ngx-charts-pie-chart>
+  </div>
+  <div class="tags">
+    <div
+      *ngFor="let entry of treeMapData"
+      class="tag"
+      [class]="entry.name"
+      [class.highlighted]="activeEntries.has(entry.name)"
+      (mouseenter)="onLegendHover(entry.name)"
+      (mouseleave)="onLegendLeave(entry.name)"
+    >
+      <app-pokemon-icon [name]="entry.name"></app-pokemon-icon>
+      <span>{{ entry.name }} ({{ entry.value }})</span>
+    </div>
+  </div>
+</div>
