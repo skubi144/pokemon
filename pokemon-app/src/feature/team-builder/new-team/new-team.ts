@@ -25,12 +25,10 @@ import {NzFlexDirective} from 'ng-zorro-antd/flex';
     NzStepComponent,
     NzFlexDirective,
   ],
-  providers: [
-    TeamBuilderService
-  ]
+  providers: []
 })
 export class NewTeam implements OnInit {
-  steps = ['base', 'pokemons', 'potions', 'berries','summary'];
+  steps = ['base', 'pokemons', 'potions', 'berries', 'summary'];
   currentChildPath: string | null = null
   currentStepId = 0;
 
