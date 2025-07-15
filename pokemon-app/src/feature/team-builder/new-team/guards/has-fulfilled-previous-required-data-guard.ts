@@ -9,14 +9,13 @@ const requiredDataBeforeStep: Record<string, Array<string>> = {
   berries: ['base', 'pokemons', 'potions'],
   summary: ['base', 'pokemons', 'potions', 'berries'],
 }
-export const hasFulfilledPreviousRequiredDataGuard: CanActivateChildFn =async (childRoute, state) => {
+export const hasFulfilledPreviousRequiredDataGuard: CanActivateChildFn = async (childRoute,) => {
   const teamBuilderService = inject(TeamBuilderService)
   const router = inject(Router)
   const steps = requiredDataBeforeStep[childRoute.routeConfig?.path ?? '']
   if (!steps) return false;
 
   const result = steps.reduce((acc, curr) => {
-    console.log(teamBuilderService.formGroup.get(curr)?.valid, curr)
     return acc && !!teamBuilderService.formGroup.get(curr)?.valid
   }, true)
 
