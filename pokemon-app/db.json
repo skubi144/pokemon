@@ -1,33 +1,122 @@
 {
   "pokemon-team": [
     {
-      "id": 1,
-      "name": "My flame team",
+      "id": "0ca1",
+      "name": "Oto moja nazwa",
+      "pokemons": [
+        "bulbasaur",
+        "ivysaur",
+        "venusaur",
+        "charmander"
+      ],
+      "potions": [
+        "max-potion",
+        "full-restore",
+        "potion"
+      ],
+      "berries": [
+        "rawst",
+        "chesto",
+        "cheri",
+        "pecha",
+        "aspear"
+      ],
       "tags": [
-        "normal",
-        "fire",
-        "water",
-        "electric",
         "grass",
-        "ice",
-        "fighting",
+        "poison",
+        "fire"
+      ]
+    },
+    {
+      "id": "7b91",
+      "name": "A to jest kolejny super team",
+      "pokemons": [
+        "ivysaur",
+        "venusaur",
+        "pikachu-cosplay",
+        "raichu",
+        "ekans",
+        "pikipek"
+      ],
+      "potions": [
+        "energy-powder",
+        "moomoo-milk",
+        "lemonade",
+        "energy-root",
+        "berry-juice"
+      ],
+      "berries": [
+        "rawst",
+        "kebia",
+        "kasib",
+        "jaboca",
+        "rowap"
+      ],
+      "tags": [
+        "grass",
+        "poison",
+        "electric",
+        "normal",
+        "flying"
+      ]
+    },
+    {
+      "id": "3ca7",
+      "name": "A to jest kolejny super team",
+      "pokemons": [
+        "ivysaur",
+        "venusaur",
+        "pikachu-cosplay",
+        "raichu",
+        "ekans",
+        "pikipek"
+      ],
+      "potions": [
+        "energy-powder",
+        "moomoo-milk",
+        "lemonade",
+        "energy-root",
+        "berry-juice"
+      ],
+      "berries": [
+        "rawst",
+        "kebia",
+        "kasib",
+        "jaboca",
+        "rowap"
+      ],
+      "tags": [
+        "grass",
+        "poison",
+        "electric",
+        "normal",
+        "flying"
+      ]
+    },
+    {
+      "id": "2576",
+      "name": "A to jest inny team",
+      "pokemons": [
+        "venusaur",
+        "sandshrew",
+        "terapagos-stellar",
+        "palkia-origin"
+      ],
+      "potions": [
+        "fresh-water",
+        "super-potion"
+      ],
+      "berries": [
+        "sitrus",
+        "chesto"
+      ],
+      "tags": [
+        "grass",
         "poison",
         "ground",
-        "flying",
-        "psychic",
-        "bug",
-        "rock",
-        "ghost",
-        "dragon",
-        "dark",
-        "steel",
-        "fairy"
-      ],
-      "pokemonIds": [
-        1,
-        2,
-        3,
-        4
+        "normal",
+        "water",
+        "dragon"
       ]
     }
   ]

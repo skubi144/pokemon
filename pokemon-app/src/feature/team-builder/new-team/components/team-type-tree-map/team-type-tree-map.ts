@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PokemonService } from '../../../../../data-access/services/pokemon-service';
-import { PokemonDetail } from '../../../../../data-access/model';
-import { forkJoin } from 'rxjs';
-import { Color, PieChartModule, ScaleType, TreeMapModule } from '@swimlane/ngx-charts';
-import { PokemonIcon } from '../../../../../shared/ui/pokemon-icon/pokemon-icon';
-import { NgClass, NgForOf } from '@angular/common';
+import {Component, Input, OnInit} from '@angular/core';
+import {PokemonService} from '../../../../../data-access/services/pokemon-service';
+import {PokemonDetail} from '../../../../../data-access/model';
+import {forkJoin} from 'rxjs';
+import {Color, PieChartModule, ScaleType, TreeMapModule} from '@swimlane/ngx-charts';
+import {PokemonIcon} from '../../../../../shared/ui/pokemon-icon/pokemon-icon';
+import {NgForOf} from '@angular/common';
+import {getPokemonTypeCounts} from '../../utils';
 
 @Component({
   selector: 'app-team-type-tree-map',
@@ -18,7 +19,7 @@ import { NgClass, NgForOf } from '@angular/common';
   styleUrls: ['./team-type-tree-map.css']
 })
 export class TeamTypeTreeMap implements OnInit {
-  @Input({ required: true }) selectedPokemonIds: string[] = [];
+  @Input({required: true}) selectedPokemonIds: string[] = [];
   activeEntries = new Set<string>();
   treeMapData: { name: string; value: number }[] = [];
   colorScheme: Color = {
@@ -27,10 +28,6 @@ export class TeamTypeTreeMap implements OnInit {
     selectable: false,
     domain: []
   };
-
-  activeEntriesArray() {
-    return this.treeMapData.filter(e => this.activeEntries.has(e.name));
-  }
 
   typeColorMap: Record<string, string> = {
     bug: '#92BC2C',
@@ -53,7 +50,8 @@ export class TeamTypeTreeMap implements OnInit {
     water: '#539DDF'
   };
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(private pokemonService: PokemonService) {
+  }
 
   onLegendHover(entry: string): void {
     this.activeEntries.add(entry);
@@ -61,6 +59,10 @@ export class TeamTypeTreeMap implements OnInit {
 
   onLegendLeave(entry: string): void {
     this.activeEntries.delete(entry);
+  }
+
+  activeEntriesArray() {
+    return this.treeMapData.filter(e => this.activeEntries.has(e.name));
   }
 
   ngOnInit(): void {
@@ -74,19 +76,7 @@ export class TeamTypeTreeMap implements OnInit {
     );
 
     forkJoin(requests).subscribe((pokemons: PokemonDetail[]) => {
-      const typeCounts = new Map<string, number>();
-
-      pokemons.forEach(pokemon => {
-        pokemon.types.forEach(typeInfo => {
-          const typeName = typeInfo.type.name;
-          typeCounts.set(typeName, (typeCounts.get(typeName) ?? 0) + 1);
-        });
-      });
-
-      this.treeMapData = Array.from(typeCounts.entries()).map(([name, value]) => ({
-        name,
-        value
-      }));
+      this.treeMapData = getPokemonTypeCounts(pokemons);
 
       this.colorScheme = {
         ...this.colorScheme,

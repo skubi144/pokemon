@@ -40,6 +40,10 @@ export class PokemonService {
     return observable$;
   }
 
+  invalidateCache(key: string) {
+    this.cache.delete(key);
+  }
+
   // Pokemon
   getPokemon(id: string | number): Observable<PokemonDetail> {
     return this.getOrCache(`pokemon-${id}`, () =>

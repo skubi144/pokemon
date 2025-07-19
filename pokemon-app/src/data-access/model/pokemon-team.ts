@@ -5,5 +5,7 @@ export interface PokemonTeam {
   id: number;
   name: string;
   tags: PokemonType[];
-  pokemonIds: PokemonDetail['id'][];
+  pokemons: string[];
+  berries: string[];
+  potions: string[];
 }

@@ -1,3 +1,4 @@
+<app-spinner *ngIf="loadingService.isLoading()"/>
 <nz-page-header [nzTitle]="'This is your team! - ' + getTeamName()"></nz-page-header>
 
 <nz-collapse nzGhost>
@@ -12,3 +13,8 @@
     <app-team-type-tree-map [selectedPokemonIds]="getPokemons()"></app-team-type-tree-map>
   </nz-collapse-panel>
 </nz-collapse>
+
+<div nz-flex nzGap="large">
+  <a nz-button [routerLink]="'/team-builder/build/berries'">Go back</a>
+  <button (click)="handleAddNewTeam()" nz-button nzType="primary">Save</button>
+</div>
