@@ -1,0 +1,7 @@
+<ol>
+  <li *ngFor="let s of strategies"
+      [class.active]="strategy === s"
+      (click)="selectStrategy(s)">
+    {{ s | titlecase }}
+  </li>
+</ol>

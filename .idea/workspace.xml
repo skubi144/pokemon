@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8dd48fe-0d86-4684-a09d-ec550517257f" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/pokemon-app/src/feature/statistics/routing/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pokemon-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/statistics/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/statistics/routing/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/statistics/team-comparer/team-comparer.html" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/statistics/team-comparer/team-comparer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pokemon-app/src/feature/statistics/team-comparer/team-comparer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pokemon-app/src/feature/statistics/team-comparer/team-comparer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,14 +52,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pokemon-app/src/feature/statistics" />
       <recent name="$PROJECT_DIR$/pokemon-app/src/shared/ui/assets" />
       <recent name="$PROJECT_DIR$/pokemon-app/src/feature/team-builder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pokemon-app/src/feature/statistics/team-comparer-strategy" />
+      <recent name="$PROJECT_DIR$/pokemon-app/src/feature/statistics" />
       <recent name="$PROJECT_DIR$/pokemon-app/src/feature/team-builder" />
       <recent name="$PROJECT_DIR$/pokemon-app/src/data-access/services" />
       <recent name="$PROJECT_DIR$/pokemon-app" />
-      <recent name="$PROJECT_DIR$/.idea" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -79,7 +82,7 @@
       <workItem from="1751702695264" duration="1493000" />
       <workItem from="1751901502802" duration="46150000" />
       <workItem from="1752404554287" duration="5765000" />
-      <workItem from="1752594674385" duration="14746000" />
+      <workItem from="1752594674385" duration="21001000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -441,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752913032461</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="update">
+      <option name="closed" value="true" />
+      <created>1752914774776</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1752914774776</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
